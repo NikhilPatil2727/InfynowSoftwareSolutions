@@ -38,3 +38,12 @@ function toggleMobileMenu() {
     sidebar.classList.toggle('active');
   }
 
+
+
+  document.getElementById('scrollToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
