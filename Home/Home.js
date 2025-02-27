@@ -24,7 +24,7 @@ indicators.forEach(dot => {
   });
 });
 
-// Auto-slide every few seconds
+// Auto-slide every few seconds 
 setInterval(() => {
   showSlide(currentSlide + 1);
 }, slideDuration);
@@ -39,7 +39,7 @@ function toggleMobileMenu() {
   }
 
 
-
+// ARROW functionality code 
   document.getElementById('scrollToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
