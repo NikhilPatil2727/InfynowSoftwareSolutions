@@ -18,15 +18,32 @@ body {
 /*****************************************************
    * 2. ANIMATION KEYFRAMES
    *****************************************************/
-@keyframes fadeInUp {
-    0% {
+   @keyframes fadeInUp {
+    from {
         opacity: 0;
         transform: translateY(30px);
     }
-
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes highlightExpand {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
     }
 }
 
@@ -59,88 +76,32 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
+    /* Removed margin-bottom as the nav is fixed */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #020d26;
     z-index: 1000;
-    background-color: rgba(2, 13, 38, 0.95);
-    padding: 0 2rem;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    animation: navEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    border:2px solid #f4a5688a;
+    border-radius: 10px;
 }
 
-@keyframes navEntrance {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Add top padding to header to prevent content from hiding behind the fixed nav */
+header {
+    padding-top: 100px; /* Adjust this value if your nav height changes */
 }
 
-/* Nav Background Gradient Animation */
-nav::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(26, 16, 64, 0.4) 0%, rgba(2, 13, 38, 0.4) 100%);
-    z-index: -1;
-    opacity: 0.8;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Nav Border Glow Animation */
-nav::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #eb6e0d, transparent);
-    animation: borderGlow 4s ease-in-out infinite;
-}
-
-@keyframes borderGlow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-}
-
-/* Enhanced Logo Animation */
+/* Logo */
 .logo {
-    perspective: 1000px;
     display: flex;
     align-items: center;
-    transition: transform 0.3s ease;
 }
 
 .logo img {
     height: 80px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(235, 110, 13, 0.4));
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.3s ease;
-}
-
-.logo:hover img {
-    transform: rotateY(15deg) scale(1.1);
-    filter: drop-shadow(0 0 12px rgba(235, 110, 13, 0.6));
 }
 
 /* Desktop Navigation Menu */
@@ -155,33 +116,14 @@ nav::after {
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    position: relative;
-    padding: 0.5rem 1rem;
-    overflow: hidden;
     transition: color 0.3s ease;
-}
-
-.main-nav li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #eb6e0d;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translateX(-50%);
-}
-
-.main-nav li a:hover::after {
-    width: 100%;
 }
 
 .main-nav li a:hover {
     color: #eb6e0d;
 }
 
-/* Enhanced Dropdown Animation (Desktop) */
+/* Dropdown (Desktop Hover) */
 .dropdown {
     position: relative;
 }
@@ -190,26 +132,23 @@ nav::after {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(26, 16, 64, 0.95);
+    background-color: #1a1040;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 0.5rem 0;
     min-width: 200px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.95);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.3s ease,
-                visibility 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 .dropdown-menu li {
@@ -221,16 +160,15 @@ nav::after {
     padding: 0.5rem 1rem;
     color: white;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .dropdown-menu li a:hover {
-    background-color: rgba(235, 110, 13, 0.15);
+    background-color: rgba(255, 215, 0, 0.1);
     color: #eb6e0d;
-    transform: translateX(5px);
 }
 
-/* Enhanced Contact Button */
+/* Contact Button */
 .Contact {
     background-color: transparent;
     border: 1px solid #eb6e0d;
@@ -238,42 +176,19 @@ nav::after {
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     font-size: 1rem;
-    z-index: 1;
 }
 
-.Contact::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-        transparent 20%, 
-        rgba(235, 110, 13, 0.3) 50%, 
-        transparent 80%);
-    animation: buttonShine 3s infinite;
-    transition: all 0.6s ease;
-    z-index: -1;
+.Contact:hover {
+    background-color: #eb6e0d;
+    color: #1a1040;
 }
 
-
-@keyframes buttonShine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
-}
-
-.Contact:hover::before {
-    animation-duration: 1s;
-}
-
-/* ======================
-   MOBILE MENU (Hamburger & Sidebar)
-   ====================== */
+/*****************************************************
+   * 4. MOBILE MENU (HAMBURGER & SIDEBAR)
+   *****************************************************/
+/* Hamburger Button (shown on small screens) */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -282,65 +197,36 @@ nav::after {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-btn:hover {
-    transform: scale(1.1);
-    color: #eb6e0d;
 }
 
 .nav-link {
     color: #eb6e0d;
 }
 
-/* Mobile Sidebar */
+/* Mobile Sidebar Menu */
 .mobile-sidebar {
     position: fixed;
     top: 0;
     right: 0;
     width: 250px;
     height: 100vh;
-    background-color: rgba(2, 13, 38, 0.98);
+    background-color: #020d26;
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: 1000;
+    transition: transform 0.3s ease;
+    z-index: 1100; /* Ensures the sidebar overlays the fixed nav */
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow-y: auto;
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    scrollbar-width: thin;
-    scrollbar-color: #eb6e0d #04123a;
 }
 
-.mobile-sidebar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.mobile-sidebar::-webkit-scrollbar-track {
-    background: #04123a;
-    border-radius: 4px;
-}
-
-.mobile-sidebar::-webkit-scrollbar-thumb {
-    background-color: #eb6e0d;
-    border-radius: 4px;
-    border: 2px solid #04123a;
-}
-
+/* When active, slide into view */
 .mobile-sidebar.active {
     transform: translateX(0);
-    animation: sidebarReveal 0.5s ease forwards;
 }
 
-@keyframes sidebarReveal {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
+/* Sidebar Navigation List */
 .mobile-sidebar .sidebar-nav {
     list-style: none;
     display: flex;
@@ -348,17 +234,7 @@ nav::after {
     gap: 1rem;
 }
 
-.mobile-sidebar .sidebar-nav li {
-    transform: translateX(20px);
-    opacity: 0;
-    animation: slideInItems 0.5s ease forwards;
-    animation-delay: calc(0.1s * var(--item-index, 0));
-}
-
-@keyframes slideInItems {
-    to { transform: translateX(0); opacity: 1; }
-}
-
+/* Sidebar Dropdowns (remove extra positioning) */
 .mobile-sidebar .dropdown {
     position: relative;
 }
@@ -377,60 +253,36 @@ nav::after {
 
 .mobile-sidebar .dropdown-menu li a {
     padding-left: 1rem;
-    border-left: 2px solid rgba(235, 110, 13, 0.3);
-    margin-left: 0.5rem;
-    transition: all 0.3s ease;
 }
 
-.mobile-sidebar .dropdown-menu li a:hover {
-    border-left: 2px solid #eb6e0d;
-    background-color: rgba(235, 110, 13, 0.1);
-}
-.close-btn {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1001;
-    transition: transform 0.3s ease, color 0.3s ease;
-    outline: none;
-}
+/*****************************************************
+   * 5. RESPONSIVE BREAKPOINTS (Header/Nav)
+   *****************************************************/
+@media (max-width: 768px) {
+    /* Show hamburger and hide desktop nav */
+    .mobile-menu-btn {
+        display: block;
+    }
 
-.close-btn:hover {
-    color: #eb6e0d;
-    transform: scale(1.1);
-}
+    .main-nav {
+        display: none;
+    }
     
+    /* For mobile, ensure no extra bottom margin on the fixed nav */
+    nav {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+}
 
-/* ======================
-   HERO SECTION
-   ====================== */
+/*****************************************************
+   * 6. HERO SECTION
+   *****************************************************/
 .hero {
     max-width: 800px;
-    margin: 100px auto 0;
+    margin: 0 auto;
     text-align: left;
     padding: 2rem 0;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    opacity: 0;
-    animation: heroEntrance 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
-}
-
-@keyframes heroEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 h1 {
@@ -438,67 +290,11 @@ h1 {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: white;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: textReveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
-}
-
-@keyframes textReveal {
-    0% {
-        opacity: 0;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    100% {
-        opacity: 1;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-}
-
-/* Professional Shine Effect on Hero Heading */
-h1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-    transform: skewX(-25deg);
-    animation: shine 2s infinite;
-}
-
-@keyframes shine {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
 }
 
 .highlight {
-    display: inline-block;
-    position: relative;
-    padding: 0 0.2em;
-    color: #ff7f2a;
-}
-
-.highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, 
-        rgba(235, 110, 13, 0.3) 0%,
-        transparent 50%,
-        rgba(235, 110, 13, 0.3) 100%);
-    z-index: -1;
-    animation: highlightGlow 4s ease-in-out infinite;
-}
-
-@keyframes highlightGlow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+    color: #eb6e0d;
+    display: block;
 }
 
 p {
@@ -507,27 +303,12 @@ p {
     color: #cccccc;
     margin-bottom: 2rem;
     max-width: 600px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.9s forwards;
-}
-
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .cta-buttons {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 1.1s forwards;
 }
 
 .nav-button,
@@ -537,9 +318,6 @@ p {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
 }
 
 .nav-button {
@@ -552,200 +330,56 @@ p {
     border: 1px solid #eb6e0d;
 }
 
-.nav-button::before,
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: #eb6e0d;
-    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-    z-index: -1;
-}
-
-.nav-button:hover::before,
-.cta-button:hover::before {
-    left: 0;
-}
-
 .nav-button:hover,
 .cta-button:hover {
-    color: #fff;
+    background-color: #eb6e0d;
     border-color: #eb6e0d;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(235, 110, 13, 0.4);
+    color: #1a1040;
 }
 
 .social-links {
     display: flex;
     gap: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 1.3s forwards;
 }
 
 .social-links a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.social-links a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #eb6e0d;
-    transition: width 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
     color: #eb6e0d;
-    transform: translateY(-3px);
 }
 
-.social-links a:hover::before {
-    width: 100%;
-}
-
-/* Repeated Background Text Animation (Big Animation) */
-.hero .repeated-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 6rem;
-    color: rgba(235, 110, 13, 0.05);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    z-index: -1;
-    opacity: 0;
-    animation: repeatedText 10s ease-in-out infinite;
-}
-
-@keyframes repeatedText {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1) rotate(2deg);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
-    }
-}
-
-/* Additional Hero Background Enhancements */
-/* Background Particles Effect */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(235, 110, 13, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(235, 110, 13, 0.1) 0%, transparent 30%);
-    animation: particlesMove 20s linear infinite;
-    z-index: -1;
-}
-
-@keyframes particlesMove {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-5%, -5%); }
-    50% { transform: translate(5%, 5%); }
-    75% { transform: translate(5%, -5%); }
-    100% { transform: translate(0, 0); }
-}
-
-/* Gradient Overlay Animation */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-        rgba(26, 16, 64, 0.1) 0%, 
-        rgba(2, 13, 38, 0.3) 50%, 
-        rgba(26, 16, 64, 0.1) 100%);
-    animation: gradientFlow 15s linear infinite;
-    z-index: -2;
-}
-
-@keyframes gradientFlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ======================
-   RESPONSIVE ENHANCEMENTS
-   ====================== */
+/* Hero Responsive */
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
+    .logo img {
+        height: 40px;
     }
-    
-    .main-nav {
-        display: none;
+
+    h1 {
+        font-size: 2.5rem;
     }
-    
-    nav {
-        padding: 0.5rem 1rem;
-        animation: none;
-    }
-    
+
     .hero {
         text-align: center;
         padding: 1rem;
-        margin-top: 80px;
-        animation: mobileHeroEntrance 1s ease forwards;
     }
-    
-    @keyframes mobileHeroEntrance {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-    
-    h1 {
-        animation: mobileTextReveal 1s ease forwards;
-        animation-delay: 0.3s;
-    }
-    
-    @keyframes mobileTextReveal {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    
+
     p {
         font-size: 1rem;
-        margin: 0 auto 2rem;
+        margin: 0 auto 2rem auto;
     }
-    
+
     .cta-buttons {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .social-links {
         justify-content: center;
-    }
-    
-    /* Disable complex animations on mobile */
-    .highlight::after,
-    .Contact::before {
-        animation: none;
     }
 }
 
@@ -753,32 +387,134 @@ p {
     .logo img {
         height: 35px;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
-        margin: 0 auto 2rem;
+        margin: 0 auto 2rem auto;
     }
-    
+
     .cta-button {
         text-align: center;
     }
 }
-
-/* ======================
-   PERFORMANCE OPTIMIZATIONS
-   ====================== */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
+/* hero section animatio  */
+.hero {
+    position: relative; /* For the pseudo-element positioning */
+    overflow: hidden;   /* Hide any overflow from the shine effect */
+    animation: heroTech 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    transform-origin: center;
+    z-index: 1;
+  }
+  
+  /* Keyframes for the subtle scaling/translation/rotation effect */
+  @keyframes heroTech {
+    0% {
+      transform: scale(1) translateY(0) rotate(0deg);
+      opacity: 1;
     }
+    25% {
+      transform: scale(1.02) translateY(-10px) rotate(0.5deg);
+      opacity: 0.98;
+    }
+    50% {
+      transform: scale(1.04) translateY(-20px) rotate(0deg);
+      opacity: 0.96;
+    }
+    75% {
+      transform: scale(1.02) translateY(-10px) rotate(-0.5deg);
+      opacity: 0.98;
+    }
+    100% {
+      transform: scale(1) translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Pseudo-element for a gentle, moving shine effect */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent 0%, rgba(209, 116, 28, 0.182) 50%, transparent 100%);
+    transform: translateX(-100%) rotate(30deg);
+    animation: shine 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* Keyframes for the shine overlay */
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(30deg);
+    }
+  }
+  /* navbar mobile view sidebar  */
+  .sidebar-header .close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff; /* default white color */
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.sidebar-header .close-btn:hover {
+    color: orange; /* changes to orange on hover */
+    transform: scale(1.1);
+}
+/* 
+logo animation navarbar  */
+/* Logo container for proper positioning */
+.logo {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  /* Smooth scale transition for the image */
+  .logo img {
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Scale up the logo slightly on hover */
+  .logo:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Create a pseudo-element overlay for the shine effect */
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 165, 0, 0.4) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+  }
+  
+  /* Animate the shine overlay across the logo on hover */
+  .logo:hover::before {
+    left: 100%;
+  }
+  
+  
+
+
 /*****************************************************
    * 7. SERVICES SECTION
    *****************************************************/
