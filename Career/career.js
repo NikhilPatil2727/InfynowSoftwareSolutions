@@ -200,3 +200,10 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// NAVBAR
+
+function toggleMobileMenu() {
+    const sidebar = document.getElementById('mobile-sidebar');
+    sidebar.classList.toggle('active');
+  }

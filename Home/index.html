@@ -8,87 +8,90 @@
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<body>
 
-
-<header>
-    <nav>
-        <div class="logo">
-            <img src="../public/images/logo.png" alt="TECH Logo" />
-        </div>
-
-        <!-- Desktop Navigation Menu -->
-        <ul class="main-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
-                    <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
-                    <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                    <li><a href="../Services/Training/training.html">Internship &amp; Projects</a></li>
-                </ul>
-            </li>
-            <li><a href="../Services/Training/training.html">Training</a></li>
-            <li><a href="../About/about.html">About</a></li>
-            <li><a href="../Career/career.html">Careers</a></li>
-            <li><a href="../Contact/contact.html"><button class="Contact">Contact</button></a></li>
-        </ul>
-
-        <!-- Hamburger Button (Mobile Only) -->
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
-            <i class="fa fa-bars"></i>
-        </button>
-    </nav>
-
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-sidebar" id="mobile-sidebar">
-        <!-- <div class="sidebar-header">
-            <button class="close-btn" onclick="toggleMobileMenu()">×</button>
-        </div> -->
+    <header>
+        <nav>
+            <a href="../Home/index.html">
+                <div class="logo">
+                    <img src="../public/images/logo.png" alt="TECH Logo" />
+                </div>
         
-        <div class="sidebar-content">
-            <ul class="sidebar-nav">
-                <li ><a href="../Home/index.html"  class="nav-link" style="text-decoration: none;">Home</a></li>
-                
+            </a>
+            
+            <!-- Desktop Navigation Menu -->
+            <ul class="main-nav">
+                <li><a href="../Home/index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none;">Services</a>
+                    <a href="#">Services</a>
                     <ul class="dropdown-menu">
                         <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
                         <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
                         <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                        <li><a href="../Services/Training/training.html">Internship & Projects</a></li>
+                        <li><a href="../Training/training.html">Internship &amp; Projects</a></li>
                     </ul>
                 </li>
-                
-                <li><a href="../Services/Training/training.html" class="nav-link" style="text-decoration: none;">Training</a></li>
-                <li><a href="../About/about.html" class="nav-link" style="text-decoration: none;">About</a></li>
-                <li><a href="../Career/career.html" class="nav-link" style="text-decoration: none;">Careers</a></li>
-                <li><a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a></li>
+                <li><a href="../Training/training.html">Training</a></li>
+                <li><a href="../About/about.html">About</a></li>
+                <li><a href="../Career/career.html">Careers</a></li>
+                <li><a href="../Contact/contact.html"><button class="Contact">Contact</button></a></li>
             </ul>
+    
+            <!-- Hamburger Button (Mobile Only) -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    
+        <!-- Mobile Sidebar Menu -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <button class="close-btn" onclick="toggleMobileMenu()" >×</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="sidebar-nav">
+                    <li ><a href="../Home/index.html"  class="nav-link" style="text-decoration: none;">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none;">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
+                            <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
+                            <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
+                            <li><a href="../Training/training.html">Internship & Projects</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="../Training/training.html" class="nav-link" style="text-decoration: none;">Training</a></li>
+                    <li><a href="../About/about.html" class="nav-link" style="text-decoration: none;">About</a></li>
+                    <li><a href="../Career/career.html" class="nav-link" style="text-decoration: none;">Careers</a></li>
+                    <li><a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>
-            Delivering Superior Services Cutting-Edge <span class="highlight">IT Solutions.</span>
-        </h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-        </p>
-        <div class="cta-buttons">
-            <a href="../Contact/contact.html" class="cta-button">Contact Us</a>
-            <a href="../About/about.html" class="cta-button">Get Started</a>
+    
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>
+                Delivering Superior Services Cutting-Edge <span class="highlight">IT Solutions.</span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <div class="cta-buttons">
+                <a href="../Contact/contact.html" class="cta-button">Contact Us</a>
+                <a href="../About/about.html" class="cta-button">Get Started</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-</header>
+    </header>
 
 <!-- body section  -->
 <div class="services-section">
@@ -373,7 +376,7 @@
     <div class="discuss-section">
         <h2>Let’s Discuss your Projects</h2>
         <p class="discuss-text">
-            We pride ourselves with our ability to perform and deliver results. Use the form
+             We pride ourselves with our ability to perform and deliver results. Use the form
             below to discuss your project needs with our team, we will get back asap.
         </p>
         <a href="../Contact/contact.html" class="contact-btn">Contact Us</a>
@@ -469,7 +472,7 @@
             <h4>Useful Links</h4>
             <ul>
                 <li><a href="../Home/index.html">Home</a></li>
-                <li><a href="../Services/Training/training.html">Training</a></li>
+                <li><a href="../Training/training.html">Training</a></li>
                 <li><a href="../About/about.html">About us</a></li>
                 <li><a href="../Career/career.html">Careers</a></li>
                 <li><a href="../Contact/contact.html">Contact</a></li>
@@ -483,11 +486,11 @@
             <p>(+91)9513421639, (+91)9611860475</p>
             <p>infynow@gmail.com</p>
 
-            <h4>Newsletter</h4>
+            <!-- <h4>Newsletter</h4>
             <form class="newsletter-form">
                 <input type="email" placeholder="Email Address" required />
                 <button type="submit">Go</button>
-            </form>
+            </form> -->
         </div>
     </div>
 
