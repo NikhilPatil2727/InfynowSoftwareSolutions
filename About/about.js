@@ -61,7 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ARROW
-
 document.getElementById('scrollToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -70,8 +69,7 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
 });
 
 // NAVBAR
-
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
-  }
+}

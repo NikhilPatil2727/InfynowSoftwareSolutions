@@ -2,6 +2,8 @@
     --dark-blue: #020d26;
     --orange: #FF6B00;
     --white: #ffffff;
+    --main-heading-color: #ff5722;
+    --card-heading-color: #ffffff;
 }
 
 * {
@@ -16,227 +18,161 @@ body {
     color: var(--white);
 }
 
-
-/* NAVBAR */
-
-/* Navigation Bar Styles */
+/* ------------------------------
+   Top Navbar Container
+------------------------------ */
+/* ------------------------------
+   Top Navbar Container
+------------------------------ */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #020d26;
     z-index: 1000;
-    background-color: rgba(2, 13, 38, 0.95);
-    padding: 0 2rem;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    animation: navEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes navEntrance {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Nav Background Gradient Animation */
-nav::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(26, 16, 64, 0.4) 0%, rgba(2, 13, 38, 0.4) 100%);
-    z-index: -1;
-    opacity: 0.8;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Nav Border Glow Animation */
-nav::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #eb6e0d, transparent);
-    animation: borderGlow 4s ease-in-out infinite;
-}
-
-@keyframes borderGlow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-}
-
-/* Logo Animation */
-.logo {
-    perspective: 1000px;
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.logo img {
+    border: 2px solid rgba(244, 165, 104, 0.54);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Prevent header content from hiding under fixed navbar */
+  header {
+    padding-top: 100px;
+  }
+  
+  /* ------------------------------
+     Logo with Hover Animation
+  ------------------------------ */
+  .logo {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .logo img {
+    display: block;
     height: 80px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(235, 110, 13, 0.4));
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.3s ease;
-}
-
-.logo:hover img {
-    transform: rotateY(15deg) scale(1.1);
-    filter: drop-shadow(0 0 12px rgba(235, 110, 13, 0.6));
-}
-
-/* Desktop Navigation Menu */
-.main-nav {
+    transition: transform 0.5s ease;
+  }
+  
+  .logo:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Shine overlay for the logo */
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 165, 0, 0.4) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+  }
+  
+  .logo:hover::before {
+    left: 100%;
+  }
+  
+  /* ------------------------------
+     Desktop Navigation Menu
+  ------------------------------ */
+  .main-nav {
     display: flex;
     list-style: none;
     gap: 2rem;
     align-items: center;
-}
-
-.main-nav li a {
+  }
+  
+  .main-nav li a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    position: relative;
-    padding: 0.5rem 1rem;
-    overflow: hidden;
     transition: color 0.3s ease;
-}
-
-.main-nav li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #eb6e0d;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translateX(-50%);
-}
-
-.main-nav li a:hover::after {
-    width: 100%;
-}
-
-.main-nav li a:hover {
+  }
+  
+  .main-nav li a:hover {
     color: #eb6e0d;
-}
-
-/* Dropdown Menu (Desktop) */
-.dropdown {
+  }
+  
+  /* ------------------------------
+     Dropdown Menu (Desktop)
+  ------------------------------ */
+  .dropdown {
     position: relative;
-}
-
-.dropdown-menu {
+  }
+  
+  .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(26, 16, 64, 0.95);
+    background-color: #1a1040;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 0.5rem 0;
     min-width: 200px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.95);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.3s ease,
-                visibility 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-.dropdown:hover .dropdown-menu {
+  }
+  
+  .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
-}
-
-.dropdown-menu li {
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu li {
     list-style: none;
-}
-
-.dropdown-menu li a {
+  }
+  
+  .dropdown-menu li a {
     display: block;
     padding: 0.5rem 1rem;
     color: white;
     text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.dropdown-menu li a:hover {
-    background-color: rgba(235, 110, 13, 0.15);
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: rgba(255, 215, 0, 0.1);
     color: #eb6e0d;
-    transform: translateX(5px);
-}
-
-/* Contact Button */
-.Contact {
+  }
+  
+  /* ------------------------------
+     Contact Button
+  ------------------------------ */
+  .Contact {
     background-color: transparent;
     border: 1px solid #eb6e0d;
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     font-size: 1rem;
-    z-index: 1;
-}
-
-.Contact::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-        transparent 20%, 
-        rgba(235, 110, 13, 0.3) 50%, 
-        transparent 80%);
-    animation: buttonShine 3s infinite;
-    transition: all 0.6s ease;
-    z-index: -1;
-}
-
-@keyframes buttonShine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
-}
-
-.Contact:hover::before {
-    animation-duration: 1s;
-}
-
-/* Mobile Menu (Hamburger & Sidebar) */
-.mobile-menu-btn {
+  }
+  
+  .Contact:hover {
+    background-color: #eb6e0d;
+    color: #1a1040;
+  }
+  
+  /* ------------------------------
+     Mobile Menu Button
+  ------------------------------ */
+  .mobile-menu-btn {
     display: none;
     background: none;
     border: none;
@@ -244,88 +180,45 @@ nav::after {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-btn:hover {
-    transform: scale(1.1);
-    color: #eb6e0d;
-}
-
-.nav-link {
-    color: #eb6e0d;
-}
-
-/* Mobile Sidebar */
-.mobile-sidebar {
+  }
+  
+  /* ------------------------------
+     Mobile Sidebar Menu
+  ------------------------------ */
+  .mobile-sidebar {
     position: fixed;
     top: 0;
     right: 0;
     width: 250px;
     height: 100vh;
-    background-color: rgba(2, 13, 38, 0.98);
+    background-color: #020d26;
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: 1000;
+    transition: transform 0.3s ease;
+    z-index: 1100;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow-y: auto;
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    scrollbar-width: thin;
-    scrollbar-color: #eb6e0d #04123a;
-}
-
-.mobile-sidebar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.mobile-sidebar::-webkit-scrollbar-track {
-    background: #04123a;
-    border-radius: 4px;
-}
-
-.mobile-sidebar::-webkit-scrollbar-thumb {
-    background-color: #eb6e0d;
-    border-radius: 4px;
-    border: 2px solid #04123a;
-}
-
-.mobile-sidebar.active {
+  }
+  
+  .mobile-sidebar.active {
     transform: translateX(0);
-    animation: sidebarReveal 0.5s ease forwards;
-}
-
-@keyframes sidebarReveal {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.mobile-sidebar .sidebar-nav {
+  }
+  
+  .sidebar-nav {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.mobile-sidebar .sidebar-nav li {
-    transform: translateX(20px);
-    opacity: 0;
-    animation: slideInItems 0.5s ease forwards;
-    animation-delay: calc(0.1s * var(--item-index, 0));
-}
-
-@keyframes slideInItems {
-    to { transform: translateX(0); opacity: 1; }
-}
-
-.mobile-sidebar .dropdown {
+  }
+  
+  /* Sidebar Dropdowns */
+  .mobile-sidebar .dropdown {
     position: relative;
-}
-
-.mobile-sidebar .dropdown-menu {
+  }
+  
+  .mobile-sidebar .dropdown-menu {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -335,68 +228,52 @@ nav::after {
     box-shadow: none;
     padding: 0;
     min-width: auto;
-}
-
-.mobile-sidebar .dropdown-menu li a {
+  }
+  
+  .mobile-sidebar .dropdown-menu li a {
     padding-left: 1rem;
-    border-left: 2px solid rgba(235, 110, 13, 0.3);
-    margin-left: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.mobile-sidebar .dropdown-menu li a:hover {
-    border-left: 2px solid #eb6e0d;
-    background-color: rgba(235, 110, 13, 0.1);
-}
-
-/* Close Button */
-.close-btn {
+  }
+  
+  /* ------------------------------
+     Sidebar Close Button (Mobile)
+  ------------------------------ */
+  .sidebar-header .close-btn {
     background: transparent;
     border: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    color: #ffffff;
+    font-size: 2rem;
     cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1001;
-    transition: transform 0.3s ease, color 0.3s ease;
-    outline: none;
-}
-
-.close-btn:hover {
-    color: #eb6e0d;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sidebar-header .close-btn:hover {
+    color: orange;
     transform: scale(1.1);
-}
-
-/* Responsive Enhancements */
-@media (max-width: 768px) {
+  }
+  
+  /* ------------------------------
+     Responsive (Mobile)
+  ------------------------------ */
+  @media (max-width: 768px) {
     .mobile-menu-btn {
-        display: block;
+      display: block;
     }
-    
     .main-nav {
-        display: none;
+      display: none;
     }
-    
-    nav {
-        padding: 0.5rem 1rem;
-        animation: none;
-    }
+  }
+
+  .contact-btn {
+    display: inline-block;
+    background-color: #eb6e0d;
+    color: #1b1528;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3sease;
 }
 
-@media (max-width: 480px) {
-    .logo img {
-        height: 35px;
-    }
-}
-
-
-
-/* heading */
-
-/* Hero Section Styles */
 .hero-section {
     background: linear-gradient(135deg, var(--dark-blue) 0%, #0a1e4a 100%);
     color: var(--white);
@@ -425,7 +302,7 @@ nav::after {
     margin-bottom: 20px;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    color: var(--white);
+    color: var(--main-heading-color);
 }
 
 .hero-section p {
@@ -444,17 +321,15 @@ nav::after {
     }
 }
 
-/* Adjust existing styles */
 .contact-container {
-    margin-top: 0; /* Remove top margin since we have the hero section */
+    margin-top: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.5em;
     }
-    
+
     .hero-section p {
         font-size: 1em;
     }
@@ -469,7 +344,6 @@ nav::after {
     gap: 40px;
 }
 
-/* Form Section Styles */
 .form-section {
     flex: 1;
     min-width: 300px;
@@ -477,7 +351,7 @@ nav::after {
 }
 
 .section-title {
-    color: var(--white);
+    color: var(--main-heading-color);
     margin-bottom: 30px;
     font-size: 2em;
     position: relative;
@@ -513,7 +387,6 @@ nav::after {
     color: var(--white);
 }
 
-/* Select element specific styling */
 .input-group select {
     appearance: none;
     -webkit-appearance: none;
@@ -573,7 +446,6 @@ nav::after {
     transform: translateY(-2px);
 }
 
-/* Info Section Styles */
 .info-section {
     flex: 1;
     min-width: 300px;
@@ -628,7 +500,6 @@ nav::after {
     transform: translateY(-3px);
 }
 
-/* Map Section Styles */
 .map-section {
     max-width: 1200px;
     margin: 50px auto;
@@ -643,7 +514,6 @@ nav::after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Animations */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -675,7 +545,6 @@ nav::after {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
@@ -690,70 +559,60 @@ nav::after {
     }
 }
 
-/* ARROW */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #eb6e0d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 1000;
+    text-decoration: none;
+}
 
+#scrollToTop:hover {
+    background: #eb6e0d;
+    transform: scale(1.1);
+}
 
-        /* New scroll-to-top button styles <button class="citation-flag" data-index="2"><button class="citation-flag" data-index="4"> */
-        #scrollToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #eb6e0d;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            z-index: 1000;
-            text-decoration: none; /* Prevent underline on some browsers */
-        }
-        
-        #scrollToTop:hover {
-            background: #eb6e0d;
-            transform: scale(1.1);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            #scrollToTop {
-                width: 40px;
-                height: 40px;
-                bottom: 15px;
-                right: 15px;
-                font-size: 18px;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            #scrollToTop {
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-        }
-        
-        @media (min-width: 1440px) {
-            #scrollToTop {
-                width: 60px;
-                height: 60px;
-                bottom: 30px;
-                right: 30px;
-                font-size: 28px;
-            }
-        }
+@media (max-width: 768px) {
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 18px;
+    }
+}
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    #scrollToTop {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
 
-/*****************************************************
-   * 12. FOOTER
-   *****************************************************/
-  /*  Footer Section */
-  .footer-section {
+@media (min-width: 1440px) {
+    #scrollToTop {
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        font-size: 28px;
+    }
+}
+
+.footer-section {
     background-color: #1b1528;
     color: #fff;
     padding: 60px 20px 20px;
@@ -897,7 +756,6 @@ nav::after {
     width: 100%;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .footer-top {
         grid-template-columns: repeat(2, 1fr);

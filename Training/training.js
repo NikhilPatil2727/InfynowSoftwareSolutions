@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Handle form submission
 document.getElementById('internshipForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // In a real application, you would send this data to a server
     const formData = new FormData(this);
     alert('Thank you for your application! We will review it and get back to you soon.');
@@ -94,7 +94,7 @@ headings.forEach(heading => {
     heading.addEventListener('mouseenter', () => {
         heading.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
     });
-    
+
     heading.addEventListener('mouseleave', () => {
         heading.style.textShadow = 'none';
     });
@@ -106,14 +106,13 @@ formInputs.forEach(input => {
     input.addEventListener('focus', () => {
         input.style.boxShadow = '0 0 0 2px rgba(255, 87, 34, 0.3)';
     });
-    
+
     input.addEventListener('blur', () => {
         input.style.boxShadow = 'none';
     });
 });
 
 // ARROW
-
 document.getElementById('scrollToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -121,11 +120,8 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
     });
 });
 
-
 // NAVBAR
-
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
-  }
-
+}

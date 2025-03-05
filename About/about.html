@@ -8,83 +8,77 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-<header>
-        <!-- NAVBAR -->
 
+    <header>
         <nav>
-            <a href="../Home/index.html">
-                <div class="logo">
-                    <img src="../public/images/logo.png" alt="TECH Logo" />
-                </div>
-            </a>
-            
-            <!-- Desktop Navigation Menu -->
-            <ul class="main-nav">
-                <li><a href="../Home/index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
-                        <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
-                        <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                        <li><a href="../Training/training.html">Internship &amp; Projects</a></li>
-                    </ul>
-                </li>
-                <li><a href="../Training/training.html">Training</a></li>
-                <li><a href="../About/about.html">About</a></li>
-                <li><a href="../Career/career.html">Careers</a></li>
-                <li>
-                    <a href="../Contact/contact.html">
-                        <button class="Contact">Contact</button>
-                    </a>
-                </li>
-            </ul>
-    
-            <!-- Hamburger Button (Mobile Only) -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
-                <i class="fa fa-bars"></i>
-            </button>
+          <div class="logo">
+            <img src="../public/images/logo.png" alt="TECH Logo" />
+          </div>
+          
+          <!-- Desktop Navigation Menu -->
+          <ul class="main-nav">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a href="#">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
+                <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
+                <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
+                <li><a href="../Training/training.html">Internship &amp; Projects</a></li>
+              </ul>
+            </li>
+            <li><a href="../Training/training.html">Training</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../Career/career.html">Careers</a></li>
+            <li>
+              <a href="../Contact/contact.html">
+                <button class="Contact">Contact</button>
+              </a>
+            </li>
+          </ul>
+          
+          <!-- Hamburger Button (Mobile Only) -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
+            <i class="fa fa-bars"></i>
+          </button>
         </nav>
-    
+        
         <!-- Mobile Sidebar Menu -->
         <div class="mobile-sidebar" id="mobile-sidebar">
-            <div class="sidebar-header">
-                <button class="close-btn" onclick="toggleMobileMenu()">×</button>
-            </div>
-            
-            <div class="sidebar-content">
-                <ul class="sidebar-nav">
-                    <li>
-                        <a href="../Home/index.html" class="nav-link" style="text-decoration: none;">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none;">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
-                            <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
-                            <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                            <li><a href="../Training/training.html">Internship &amp; Projects</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../Training/training.html" class="nav-link" style="text-decoration: none;">Training</a>
-                    </li>
-                    <li>
-                        <a href="../About/about.html" class="nav-link" style="text-decoration: none;">About</a>
-                    </li>
-                    <li>
-                        <a href="../Career/career.html" class="nav-link" style="text-decoration: none;">Careers</a>
-                    </li>
-                    <li>
-                        <a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
-                    </li>
+          <div class="sidebar-header">
+            <button class="close-btn" onclick="toggleMobileMenu()">×</button>
+          </div>
+          <div class="sidebar-content">
+            <ul class="sidebar-nav">
+              <li>
+                <a href="../Home/index.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none ; color: #ff5722;">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a href="../Services/webDev/webDev.html">Web Development</a></li>
+                  <li><a href="../Services/AppDev/appDev.html">Application Development</a></li>
+                  <li><a href="../Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
+                  <li><a href="../Training/training.html">Internship &amp; Projects</a></li>
                 </ul>
-            </div>
+              </li>
+              <li>
+                <a href="../Training/training.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Training</a>
+
+              </li>
+              <li>
+                <a href="../About/about.html" class="nav-link" style="text-decoration: none; color: #ff5722;">About</a>
+              </li>
+              <li>
+                <a href="../Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a>
+              </li>
+              <li>
+                <a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none; ">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-
-
-
-</header>
+      </header>
 
     <!-- heading -->
 
@@ -178,7 +172,7 @@
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="../Home/index.html">Home</a></li>
-                    <li><a href="../Services/Training/training.html">Training</a></li>
+                    <li><a href="../Training/training.html">Training</a></li>
                     <li><a href="../About/about.html">About us</a></li>
                     <li><a href="../Career/career.html">Careers</a></li>
                     <li><a href="../Contact/contact.html">Contact</a></li>

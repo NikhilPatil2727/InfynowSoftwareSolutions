@@ -138,7 +138,7 @@ function populateJobs() {
 // Handle form submission
 document.getElementById('applicationForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // In a real application, you would send this data to a server
     const formData = new FormData(this);
     alert('Thank you for your application! We will review it and get back to you soon.');
@@ -148,7 +148,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     populateJobs();
-    
+
     // Add form field highlight effect
     const formInputs = document.querySelectorAll('input, select, textarea');
     formInputs.forEach(input => {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             input.style.boxShadow = '0 0 0 2px rgba(255, 87, 34, 0.3)';
             input.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
         });
-        
+
         input.addEventListener('blur', () => {
             input.style.boxShadow = 'none';
             input.style.backgroundColor = 'rgb(39, 32, 59)';
@@ -170,7 +170,7 @@ document.addEventListener('scroll', function() {
     jobCards.forEach(card => {
         const cardTop = card.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
+
         if (cardTop < windowHeight * 0.85) {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         heading.addEventListener('mouseenter', () => {
             heading.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
         });
-        
+
         heading.addEventListener('mouseleave', () => {
             heading.style.textShadow = 'none';
         });
@@ -206,4 +206,4 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
-  }
+}

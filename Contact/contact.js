@@ -1,58 +1,49 @@
-// Hero section parallax effect
 document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.hero-section');
-    
+
     window.addEventListener('scroll', function() {
         if (heroSection) {
             const scrolled = window.pageYOffset;
             const rate = scrolled * 0.5;
-            
             heroSection.style.backgroundPosition = `center ${rate}px`;
         }
     });
 });
 
-// Form Validation
 function validateForm(event) {
     event.preventDefault();
-    
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    // Basic validation
     if (!name || !email || !phone || !subject || !message) {
         alert('Please fill in all fields');
         return false;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Please enter a valid email address');
         return false;
     }
 
-    // Phone validation
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone)) {
         alert('Please enter a valid 10-digit phone number');
         return false;
     }
 
-    // If validation passes, you can send the form data to your server
     alert('Form submitted successfully!');
     document.getElementById('contactForm').reset();
     return true;
 }
 
-// Google Maps Integration
 function initMap() {
-    // Coordinates for Belagavi (update these with exact coordinates)
     const companyLocation = {
-        lat: 15.8497, 
+        lat: 15.8497,
         lng: 74.4977
     };
 
@@ -81,7 +72,6 @@ function initMap() {
         ]
     });
 
-    // Add marker for company location
     const marker = new google.maps.Marker({
         position: companyLocation,
         map: map,
@@ -89,7 +79,6 @@ function initMap() {
         animation: google.maps.Animation.DROP
     });
 
-    // Add info window
     const infoWindow = new google.maps.InfoWindow({
         content: `
             <div style="color: #020d26; padding: 10px;">
@@ -104,10 +93,8 @@ function initMap() {
     });
 }
 
-// Initialize map when the page loads
 window.onload = initMap;
 
-// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -117,7 +104,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add floating effect to info items
 const infoItems = document.querySelectorAll('.info-item');
 infoItems.forEach(item => {
     item.addEventListener('mouseover', () => {
@@ -128,8 +114,6 @@ infoItems.forEach(item => {
     });
 });
 
-// ARROW
-
 document.getElementById('scrollToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -137,9 +121,7 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
     });
 });
 
-// NAVBAR
-
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
-  }
+}
