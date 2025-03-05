@@ -295,6 +295,7 @@ h1 {
 .highlight {
     color: #eb6e0d;
     display: block;
+    margin-top: 10px;
 }
 
 p {
@@ -538,6 +539,9 @@ logo animation navarbar  */
     margin: 0.5rem auto 2rem;
     line-height: 1.6;
     color: #ccc;
+}
+services-section,h2{
+    color:#eb6e0d;
 }
 
 /* Responsive grid container */
