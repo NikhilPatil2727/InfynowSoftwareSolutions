@@ -614,6 +614,7 @@ nav {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    
   }
   
   .dropdown:hover .dropdown-menu {
@@ -761,4 +762,9 @@ nav {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3sease;
+}
+
+option{
+    background-color: #27203B;
+    
 }
