@@ -546,7 +546,7 @@ logo animation navarbar  */
     color: #eb6e0d;
 }
 
-/* Responsive grid container */
+/* Responsive grid container with staggered entrance animation */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -555,20 +555,68 @@ logo animation navarbar  */
     margin: 0 auto;
 }
 
-/* Individual service card */
+/* Individual service card with entrance animation */
 .service-card {
     background-color: #251B34;
     border-radius: 8px;
     padding: 20px;
     text-align: left;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Hover state with orange glow animation */
+/* Staggered animation delay for cards */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover state with refined orange glow animation */
 .service-card:hover {
     transform: translateY(-5px);
     background-color: #2a1c3a; /* Slight change in background color on hover */
-    animation: orangeGlow 1s alternate infinite;
+    box-shadow: 0 5px 15px rgba(235, 110, 13, 0.3);
+}
+
+/* Add pulse effect to the border on hover */
+.service-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    border: 2px solid #eb6e0d;
+    animation: pulseBorder 1.5s infinite;
+    pointer-events: none;
+}
+
+/* Icon animation and styling */
+.service-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #eb6e0d; /* Accent color for icons */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Animate the icon on hover */
+.service-card:hover i {
+    transform: scale(1.2);
+    animation: pulse 1.5s infinite;
+}
+
+/* Content slide-up animation on hover */
+.service-card .content-wrapper {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .content-wrapper {
+    transform: translateY(-5px);
 }
 
 /* Transition the heading color on hover */
@@ -581,37 +629,89 @@ logo animation navarbar  */
     color: #eb6e0d;
 }
 
-/* Icon styling */
-.service-card i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #eb6e0d; /* Accent color for icons */
-}
-
 /* Service card title */
 .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #fff;
+    position: relative;
 }
 
-/* Service card paragraph */
+/* Animated underline effect for headings */
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #eb6e0d;
+    transition: width 0.3s ease;
+}
+
+.service-card:hover h3::after {
+    width: 40px;
+}
+
+/* Service card paragraph with reveal animation */
 .service-card p {
     font-size: 0.95rem;
     line-height: 1.5;
     color: #ccc;
 }
 
-/* Keyframes for orange glow animation */
-@keyframes orangeGlow {
+/* Keyframes for the various animations */
+@keyframes fadeInUp {
     from {
-        box-shadow: 0 0 0 rgba(235, 110, 13, 0);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-        box-shadow: 0 0 20px rgba(235, 110, 13, 0.8);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseBorder {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* For smooth page scrolling - add to your global styles */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add intersection observer animation for scroll reveal */
+.service-card.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.service-card.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 /*****************************************************
    * 8. WHY CHOOSE US SECTION
    *****************************************************/

@@ -47,3 +47,23 @@ function toggleMobileMenu() {
     });
 });
 
+
+
+// Intersection Observer for scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.service-card.reveal');
+  
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+          }
+      });
+  }, {
+      threshold: 0.1
+  });
+  
+  cards.forEach(card => {
+      observer.observe(card);
+  });
+});
