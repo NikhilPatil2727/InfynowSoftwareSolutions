@@ -519,7 +519,7 @@ logo animation navarbar  */
 /*****************************************************
    * 7. SERVICES SECTION
    *****************************************************/
-.services-section {
+   .services-section {
     background-color: #020d26;
     /* Dark background */
     padding: 60px 20px;
@@ -533,15 +533,17 @@ logo animation navarbar  */
     margin-bottom: 0.5rem;
 }
 
-.services-section>p {
+.services-section > p {
     font-size: 1rem;
     max-width: 600px;
     margin: 0.5rem auto 2rem;
     line-height: 1.6;
     color: #ccc;
 }
-services-section,h2{
-    color:#eb6e0d;
+
+/* Apply orange accent to headers if needed */
+.services-section, h2 {
+    color: #eb6e0d;
 }
 
 /* Responsive grid container */
@@ -559,107 +561,233 @@ services-section,h2{
     border-radius: 8px;
     padding: 20px;
     text-align: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover state with orange glow animation */
 .service-card:hover {
     transform: translateY(-5px);
+    background-color: #2a1c3a; /* Slight change in background color on hover */
+    animation: orangeGlow 1s alternate infinite;
 }
 
+/* Transition the heading color on hover */
+.service-card h3,
+.service-card p {
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: #eb6e0d;
+}
+
+/* Icon styling */
 .service-card i {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #eb6e0d;
-    /* Accent color for icons */
+    color: #eb6e0d; /* Accent color for icons */
 }
 
+/* Service card title */
 .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #fff;
 }
 
+/* Service card paragraph */
 .service-card p {
     font-size: 0.95rem;
     line-height: 1.5;
     color: #ccc;
 }
 
+/* Keyframes for orange glow animation */
+@keyframes orangeGlow {
+    from {
+        box-shadow: 0 0 0 rgba(235, 110, 13, 0);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(235, 110, 13, 0.8);
+    }
+}
+
 /*****************************************************
    * 8. WHY CHOOSE US SECTION
    *****************************************************/
-.why-choose-us-section {
-    background-color: #020d26;
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
+/* Container */
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    /* FadeInUp animation is inherited from the universal rule above */
+    padding: 0 20px;
 }
 
-.why-choose-us-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 60px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
     color: #eb6e0d;
 }
 
-.why-choose-us-subtitle {
-    margin: 0 auto 40px;
-    max-width: 600px;
-    color: #cfcfcf;
-    font-size: 1rem;
-    line-height: 1.6;
+.section-header p {
+    font-size: 18px;
+    color: #ccc;
 }
 
-.why-choose-us-grid {
+/* Benefits Grid Layout */
+.benefits-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding-bottom: 60px;
 }
 
-.why-choose-us-card {
-    background-color: #27203b;
-    padding: 30px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+/* Benefit Item */
+.benefit {
+    position: relative;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.why-choose-us-card:hover {
-    transform: translateY(-5px);
+/* Stagger animations for each benefit item */
+.benefit:nth-child(1) { animation-delay: 0.2s; }
+.benefit:nth-child(2) { animation-delay: 0.4s; }
+.benefit:nth-child(3) { animation-delay: 0.6s; }
+.benefit:nth-child(4) { animation-delay: 0.8s; }
+
+.benefit-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
 }
 
-.why-choose-us-icon {
-    margin-bottom: 15px;
+/* Benefit Text */
+.benefit-text {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
 }
 
-.why-choose-us-icon img {
-    width: 40px;
-    height: auto;
-}
-
-.why-choose-us-card h3 {
-    font-size: 1.25rem;
+.benefit-text h3 {
+    font-size: 28px;
     margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.benefit-text h3 span {
+    color: #eb6e0d;
+}
+
+.benefit-text p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* Benefit Icon */
+.benefit-icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #eb6e0d;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Hover animation */
+}
+
+.benefit-icon:hover {
+    transform: scale(1.1);
+}
+
+.benefit-icon i {
+    font-size: 28px;
     color: #fff;
 }
 
-.why-choose-us-card p {
-    font-size: 0.95rem;
-    color: #b3b3b3;
-    line-height: 1.6;
+.number {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background-color: #eb6e0d;
+    color: #1a0933;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 
+/* Alternate Icon Position for Right side */
+.benefit:nth-child(even) .benefit-content {
+    flex-direction: row-reverse;
+}
+
+.benefit:nth-child(even) .benefit-text {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+/* Custom Icons */
+.benefit:nth-child(1) .benefit-icon i {
+    transform: rotate(45deg);
+}
+
+.benefit:nth-child(4) .benefit-icon i {
+    color: #eb6e0d;
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
-    .why-choose-us-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 36px;
+    }
+    
+    .benefit-text h3 {
+        font-size: 24px;
     }
 }
 
 @media (max-width: 576px) {
-    .why-choose-us-grid {
-        grid-template-columns: 1fr;
+    .benefit-content {
+        flex-direction: column !important;
+    }
+    
+    .benefit-text {
+        text-align: center !important;
+        padding: 0 0 20px 0 !important;
+    }
+    
+    .section-header h2 {
+        font-size: 30px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
