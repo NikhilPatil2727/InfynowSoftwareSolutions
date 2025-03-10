@@ -16,22 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Add hover animation to service cards
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-            card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.4)';
-            card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
-            card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-        });
-    });
-
     // Add hover animation to feature cards
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
