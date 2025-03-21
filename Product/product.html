@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Solutions</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+            <a href="/Home/index.html"><img src="/logo.png" alt="TECH Logo" /></a>
+            
+        </div>
+          
+          <!-- Desktop Navigation Menu -->
+          <ul class="main-nav">
+            <li><a href="/Home/index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="/Services/webDev/webDev.html">Web Development</a></li>
+                <li><a href="/Services/AppDev/appDev.html">Application Development</a></li>
+                <li><a href="/Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
+                <li><a href="/Training/training.html">Internship &amp; Projects</a></li>
+              </ul>
+            </li>
+            <li><a href="/Training/training.html">Training</a></li>
+            <li><a href="/About/about.html">About</a></li>
+            <li><a href="/Career/career.html">Careers</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li>
+              <a href="/Contact/contact.html">
+                <button class="Contact">Contact</button>
+              </a>
+            </li>
+          </ul>
+          
+          <!-- Hamburger Button (Mobile Only) -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
+            <i class="fa fa-bars"></i>
+          </button>
+        </nav>
+        
+        <!-- Mobile Sidebar Menu -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+          <div class="sidebar-header">
+            <button class="close-btn" onclick="toggleMobileMenu()">×</button>
+          </div>
+          <div class="sidebar-content">
+            <ul class="sidebar-nav">
+              <li>
+                <a href="/Home/index.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Home</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none ; color: #ff5722;">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a href="../webDev/webDev.html">Web Development</a></li>
+                  <li><a href="../AppDev/appDev.html">Application Development</a></li>
+                  <li><a href="../SoftwareSolutions/softSol.html">Software Solutions</a></li>
+                  <li><a href="/Training/training.html">Internship &amp; Projects</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/Training/training.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Training</a>
+    
+              </li>
+              <li>
+                <a href="/About/about.html" class="nav-link" style="text-decoration: none; color: #ff5722;">About</a>
+              </li>
+              <li>
+                <a href="/Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link" style="text-decoration: none; color: #ff5722;">Products</a>
+              </li>
+                <li>
+                    <a href="#" class="nav-link" style="text-decoration: none; color: #ff5722;">Blogs</a>
+                </li>
+              
+              <li>
+                <a href="/Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      
+    <div class="container">
+
+        <header class="header">
+            <h1 class="main-title"><span class="highlight">PRODUCTS</span></h1>
+            <p class="subtitle">Innovative Software Solutions for Modern Businesses</p>
+        </header>
+
+        <section class="product-section" id="ecommerce">
+            <div class="product-header">
+                <h2 class="product-title">E-commerce Solution</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="product-content">
+                <div class="product-description">
+                    <p>Our E-commerce software is a feature-rich, customizable, and scalable solution designed to help businesses effortlessly launch and manage their online stores. Whether you are a startup, SME, or enterprise, our platform empowers you with multi-vendor marketplace support, seamless payment integrations, real-time order tracking, and advanced analytics to maximize your online sales and growth.</p>
+                </div>
+                <div class="features-container">
+                    <h3 class="features-title">Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-palette"></i>
+                            <h4>Customizable Storefront</h4>
+                            <p>Fully responsive and mobile-friendly design.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Secure Payment Gateways</h4>
+                            <p>Supports PayPal, Stripe, Razorpay, UPI, and more.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Multi-Vendor & Multi-Currency</h4>
+                            <p>Expand your reach globally.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-search"></i>
+                            <h4>SEO-Optimized Listings</h4>
+                            <p>Boost your organic search rankings.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>AI-Powered Recommendations</h4>
+                            <p>Enhance user engagement.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-boxes"></i>
+                            <h4>Real-Time Inventory</h4>
+                            <p>Automated tracking and management.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h4>Order & Shipping Management</h4>
+                            <p>Seamless tracking and updates.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-comments"></i>
+                            <h4>AI-Based Chatbot</h4>
+                            <p>Improve customer engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section" id="mlm">
+            <div class="product-header">
+                <h2 class="product-title">MLM System</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="product-content">
+                <div class="product-description">
+                    <p>Our MLM software is a powerful, automated solution designed for direct selling businesses. It helps network marketers, direct sales companies, and affiliate programs manage their operations efficiently.</p>
+                </div>
+                <div class="features-container">
+                    <h3 class="features-title">Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-sitemap"></i>
+                            <h4>Customizable MLM Plans</h4>
+                            <p>Binary, Matrix, Unilevel, Hybrid, and more.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h4>Automated Payout System</h4>
+                            <p>Secure commission calculations & withdrawals.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Genealogy Tree</h4>
+                            <p>Track and manage your downline structure.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-wallet"></i>
+                            <h4>Wallet Management</h4>
+                            <p>Easy fund management for users.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-award"></i>
+                            <h4>Rank & Bonus Management</h4>
+                            <p>Reward your team with incentives.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-globe-americas"></i>
+                            <h4>Multi-Currency Support</h4>
+                            <p>Expand your global reach.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Real-Time Analytics</h4>
+                            <p>Monitor sales, commissions, and revenue.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-plus"></i>
+                            <h4>Lead Management</h4>
+                            <p>Track and convert potential members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section" id="hrms">
+            <div class="product-header">
+                <h2 class="product-title">HRMS Solution</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="product-content">
+                <div class="product-description">
+                    <p>Our HRMS software streamlines HR operations, from employee onboarding to payroll processing, ensuring efficient workforce management for small to large enterprises.</p>
+                </div>
+                <div class="features-container">
+                    <h3 class="features-title">Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-id-card"></i>
+                            <h4>Employee Database</h4>
+                            <p>Centralized record-keeping for all employees.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <h4>Attendance & Leave Management</h4>
+                            <p>Automate tracking with biometric & GPS integration.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <h4>Payroll Management</h4>
+                            <p>Automated processing with tax compliance.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Performance & Appraisal</h4>
+                            <p>Set KPIs, track progress, and manage appraisals.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Recruitment & ATS</h4>
+                            <p>End-to-end hiring automation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-receipt"></i>
+                            <h4>Expense Tracking</h4>
+                            <p>Manage employee claims with ease.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Shift & Roster Management</h4>
+                            <p>Efficient scheduling and workforce planning.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Training & Development</h4>
+                            <p>Upskill employees with structured learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Get in touch with us today to discuss your requirements.</p>
+            <button class="cta-button">Contact Us</button>
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+</body>
+</html>

@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">
                 <a href="/Home/index.html"><img src="/logo.png" alt="TECH Logo" /></a>
-                
+
             </div>
-    
+
             <!-- Desktop Navigation Menu -->
             <ul class="main-nav">
                 <li><a href="/Home/index.html">Home</a></li>
@@ -31,25 +32,27 @@
                 <li><a href="../Training/training.html">Training</a></li>
                 <li><a href="../About/about.html">About</a></li>
                 <li><a href="../Career/career.html">Careers</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blogs</a></li>
                 <li><a href="../Contact/contact.html"><button class="Contact">Contact</button></a></li>
             </ul>
-    
+
             <!-- Hamburger Button (Mobile Only) -->
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
                 <i class="fa fa-bars"></i>
             </button>
         </nav>
-    
+
         <!-- Mobile Sidebar Menu -->
         <div class="mobile-sidebar" id="mobile-sidebar">
             <div class="sidebar-header">
                 <button class="close-btn" onclick="toggleMobileMenu()">×</button>
             </div>
-            
+
             <div class="sidebar-content">
                 <ul class="sidebar-nav">
-                    <li ><a href="../Home/index.html"  class="nav-link" style="text-decoration: none;">Home</a></li>
-                    
+                    <li><a href="../Home/index.html" class="nav-link" style="text-decoration: none;">Home</a></li>
+
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none;">Services</a>
                         <ul class="dropdown-menu">
@@ -59,660 +62,504 @@
                             <li><a href="../Training/training.html">Internship & Projects</a></li>
                         </ul>
                     </li>
-                    
-                    <li><a href="../Training/training.html" class="nav-link" style="text-decoration: none;">Training</a></li>
+
+                    <li><a href="../Training/training.html" class="nav-link" style="text-decoration: none;">Training</a>
+                    </li>
                     <li><a href="../About/about.html" class="nav-link" style="text-decoration: none;">About</a></li>
                     <li><a href="../Career/career.html" class="nav-link" style="text-decoration: none;">Careers</a></li>
-                    <li><a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a></li>
+                    <li><a href="#" class="nav-link" style="text-decoration: none;">Products</a>
+                    </li>
+                    <li><a href="#" class="nav-link" style="text-decoration: none;">Blogs</a>
+                    </li>
+                    <li><a href="../Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>
-                Delivering Superior Services Cutting-Edge <span class="highlight">IT Solutions.</span>
-            </h1>
-            <p>
-                We Make Great Things Possible 
-            </p>
-            <div class="cta-buttons">
-                <a href="../Contact/contact.html" class="cta-button">Contact Us</a>
-                <a href="../About/about.html" class="cta-button">Get Started</a>
+
+        <!-- Hero Section with Inquiry Form -->
+        <div class="hero-container">
+            <div class="hero">
+                <h1>
+                    Delivering Superior Services Cutting-Edge <span class="highlight">IT Solutions.</span>
+                </h1>
+                <p>
+                    We Make Great Things Possible
+                </p>
+                <div class="cta-buttons">
+                    <a href="../Contact/contact.html" class="cta-button">Contact Us</a>
+                    <a href="../About/about.html" class="cta-button">Get Started</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/infynow/status/1331058651222589440"><i class="fab fa-twitter"></i></a>
+                    <a  href="https://www.facebook.com/infynow/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/infynowsoftware_solutions/"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <!-- Inquiry Form -->
+            <div class="inquiry-form-container">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h2>Website Enquiry Form</h2>
+                    </div>
+                    <form class="enquiry-form">
+                        <!-- First and Last Name Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter your Name "
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name"
+                                    required />
+                            </div>
+                        </div>
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+                        </div>
+                        <!-- Phone Number Field -->
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+                        </div>
+                        <!-- Dropdown 1 -->
+                        <div class="form-group">
+                            <label for="dropdown1">Select Option 1</label>
+                            <select id="dropdown1" name="dropdown1" required>
+                                <option value="" disabled selected> Select an option </option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                        </div>
+                        <!-- Dropdown 2 -->
+                        <div class="form-group">
+                            <label for="dropdown2">Select Option 2</label>
+                            <select id="dropdown2" name="dropdown2" required>
+                                <option value="" disabled selected> Select an option </option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                        </div>
+                        <!-- Enquiry Details Field -->
+                        <div class="form-group">
+                            <label for="enquiryDetails">Enquiry Details</label>
+                            <textarea id="enquiryDetails" name="enquiryDetails" rows="2"
+                                placeholder="Type your answer here"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </header>
 
-<!-- body section  -->
-<div class="services-section">
-    <h2>Services We Offer</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-    </p>
-
-    <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-            <i class="fa fa-lightbulb"></i>
-            <h3>WEBSITE DEVELOPMENT</h3>
-            <p>
-                Are you struggling to get your client's attention and time to explain your product, service, or
-                organization...
-            </p>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-            <i class="fa fa-server"></i>
-            <h3>APPLICATION DEVELOPMENT</h3>
-            <p>
-                In recent times Mobile Applications have alternate the way we do businesses, these apps have shaped it
-                easier...
-            </p>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-            <i class="fa fa-share-alt"></i>
-            <h3>SOFTWARE SOLUTIONS</h3>
-            <p>
-                Software development is the solution that is specially developed with the process of creating,
-                designing...
-            </p>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-            <i class="fa fa-chart-line"></i>
-            <h3>INTERNSHIP & PROJECTS</h3>
-            <p>
-                Right skills and opportunities are the 2 main essential requirements to urge on the road of success
-                that...
-            </p>
-        </div>
-
-        <!-- Service 5 -->
-        <!-- <div class="service-card">
-            <i class="fa fa-cloud"></i>
-            <h3>Cloud Server</h3>
-            <p>
-                Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-            </p>
-        </div> -->
-
-        <!-- Service 6 -->
-        <!-- <div class="service-card">
-            <i class="fa fa-shield-alt"></i>
-            <h3>Data Security</h3>
-            <p>
-                Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-            </p>
-        </div> -->
-    </div>
-</div>
 
 
-<!-- Whye we choos us  -->
 
-<section class="why-choose-us">
-    <div class="container">
-        <div class="section-header">
-            <h2>Why Choose Us</h2>
-          
-        </div>
-        
-        <div class="benefits-grid">
-            <!-- Benefit 1 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3>Expertise and <span>Experience</span></h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span class="number">1</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Benefit 2 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3>Quality <span>Products</span></h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-lightbulb"></i>
-                        <span class="number">2</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Benefit 3 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3>Customer-Centric <span>Approach</span></h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                        <span class="number">3</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Benefit 4 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3><span>Competitive</span> Pricing</h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                        <span class="number">4</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Benefit 5 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3><span>Timely</span> Delivery</h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-cog"></i>
-                        <span class="number">5</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Benefit 6 -->
-            <div class="benefit">
-                <div class="benefit-content">
-                    <div class="benefit-text">
-                        <h3><span>24/7</span> Support</h3>
-                        <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-headset"></i>
-                        <span class="number">6</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- portfolio  -->
-<section class="portfolio-section">
-    <div class="portfolio-container">
-      <h1 class="portfolio-title">Our Services</h1>
-      <p class="portfolio-subtitle">
-        We provide a wide range of innovative and customized IT services designed to meet the unique needs of businesses across various industries.
-      </p>
-  
-      <div class="portfolio-filter-buttons">
-        <button class="portfolio-filter-btn active" data-filter="all">All</button>
-        <button class="portfolio-filter-btn" data-filter="app-design">App Development</button>
-        <button class="portfolio-filter-btn" data-filter="app-development">Software Development</button>
-        <button class="portfolio-filter-btn" data-filter="branding">Web Development</button>
-        <button class="portfolio-filter-btn" data-filter="it-solutions">Internship & Training</button>
-      </div>
-  
-      <div class="portfolio-grid">
-        <!-- App Development -->
-        <div class="portfolio-grid-item app-design">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=500" alt="Android Apps">
-            <div class="portfolio-card-info">
-              <h3>Android Apps</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-design">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500" alt="Educational Apps">
-            <div class="portfolio-card-info">
-              <h3>Educational Apps</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-design">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" alt="Business Apps">
-            <div class="portfolio-card-info">
-              <h3>Business Apps</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-design">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=500" alt="Entertainment Apps">
-            <div class="portfolio-card-info">
-              <h3>Entertainment Apps</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Software Development -->
-        <div class="portfolio-grid-item app-development">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?auto=format&fit=crop&q=80&w=500" alt="School Management">
-            <div class="portfolio-card-info">
-              <h3>School Management System</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-development">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=500" alt="College Management">
-            <div class="portfolio-card-info">
-              <h3>College Management System</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-development">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=500" alt="Hotel Management">
-            <div class="portfolio-card-info">
-              <h3>Hotel Management System</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-development">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=500" alt="Hospital Management">
-            <div class="portfolio-card-info">
-              <h3>Hospital Management System</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item app-development">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=500" alt="Lodging System">
-            <div class="portfolio-card-info">
-              <h3>Lodging System</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Web Development -->
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=500" alt="Static Websites">
-            <div class="portfolio-card-info">
-              <h3>Static Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&q=80&w=500" alt="Personal Websites">
-            <div class="portfolio-card-info">
-              <h3>Personal Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=500" alt="Educational Websites">
-            <div class="portfolio-card-info">
-              <h3>Educational Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&q=80&w=500" alt="Matrimonial Websites">
-            <div class="portfolio-card-info">
-              <h3>Matrimonial Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" alt="Dynamic Websites">
-            <div class="portfolio-card-info">
-              <h3>Dynamic Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=500" alt="E-commerce Websites">
-            <div class="portfolio-card-info">
-              <h3>E-commerce Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item branding">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=500" alt="Business Websites">
-            <div class="portfolio-card-info">
-              <h3>Business Websites</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Internship & Training -->
-        <div class="portfolio-grid-item it-solutions">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&q=80&w=500" alt="Web Development Training">
-            <div class="portfolio-card-info">
-              <h3>Web Development Training</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="portfolio-grid-item it-solutions">
-          <div class="portfolio-card-wrapper">
-            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=500" alt="App Development Training">
-            <div class="portfolio-card-info">
-              <h3>App Development Training</h3>
-              <a href="#" class="btn-view-project">View Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-<!-- Testimonials  -->
-
-<div class="testimonials-slider-section">
-    <h2>What Client Say</h2>
-    <p class="testimonials-subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </p>
-
-    <!-- SLIDER CONTAINER -->
-    <div class="slider-container">
-        <div class="slider-track">
-            <!-- SLIDE 1 -->
-            <div class="slide">
-                <div class="testimonial-card">
-                    <img src="../public/images/santosh.9a5f613784a02824c527.jpeg" alt="Person 1" class="testimonial-img" />
-                    <h3>Mr Santosh Kaveri</h3>
-                    <span class="job-title">Founder & Innovater</span>
-                    <div class="star-rating">★★★★★</div>
-                    <p>
-                        Thanks to the attractive web solution team who made such a wonderful website for our foundation. Extreme patience and very pleasant and positive attitude. We loved getting our website created by them and shall ever cherish it.
-                    </p>
-                    <div class="quote-icon">❝</div>
-                </div>
-            </div>
-
-            <!-- SLIDE 2 -->
-            <div class="slide">
-                <div class="testimonial-card">
-                    <img src="../public/images/download.jpg" alt="Person 2" class="testimonial-img" />
-                    <h3>Mr. Girish Badragond</h3>
-                    <span class="job-title">Scientist, Founder & Innovator</span>
-                    <div class="star-rating">★★★★★</div>
-                    <p>
-                        Very nice kind and supportive they've always improved and reverting back to all my queries and I'm more happy to recommend them.
-                    </p>
-                    <div class="quote-icon">❝</div>
-                </div>
-            </div>
-
-            <!-- SLIDE 3 -->
-            <div class="slide">
-                <div class="testimonial-card">
-                    <img src="../public/images/dinkar.08322f3f471c05e5e75c.png" alt="Person 3" class="testimonial-img" />
-                    <h3>John Doe</h3>
-                    <span class="job-title">Adv. Dinkar Shetty</span>
-                    <div class="star-rating">★★★★★</div>
-                    <p>
-                        infyNow and their team are knowledgeable, transparent, and passionate at what they are doing. They completed the project in these trying times within the stipulated period. They were patient to all my questions and queries and were ready to implement the changes requested by me. Overall extremely satisfied.
-                    </p>
-                    <div class="quote-icon">❝</div>
-                </div>
-            </div>
-
-            <!-- SLIDE 4 -->
-            <div class="slide">
-                <div class="testimonial-card">
-                    <img src="../public/images/abhishek.e44a4e228eb219e8ef3a.jpg" alt="Person 4" class="testimonial-img" />
-                    <h3>Mr. Mahesh Shahapurkar</h3>
-                    <span class="job-title">Owner & Founder</span>
-                    <div class="star-rating">★★★★★</div>
-                    <p>
-                        Amazing service at an affordable price. thanks to your team for my website it's a pleasure working with infyNow. The team understands briefs well and responds promptly to satisfy requirements.
-                    </p>
-                    <div class="quote-icon">❝</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDER INDICATORS -->
-    <div class="slider-indicators">
-        <span data-slide="0" class="active"></span>
-        <span data-slide="1"></span>
-        <span data-slide="2"></span>
-        <span data-slide="3"></span>
-    </div>
-</div>
-
-<!-- company deatails-->
-
-<div class="stats-discuss-section">
-    <!-- Stats Row -->
-    <div class="stats-container">
-        <!-- Stat 1 -->
-        <div class="stat-box">
-            <div class="icon">
-                <!-- Replace "icon1.png" with your actual icon path -->
-                <img src="../public/images/happy-clients.svg" alt="Icon 1">
-            </div>
-            <h3 class="stat-number">232</h3>
-            <h4 class="stat-title">Happy Clients</h4>
-            <!-- <p class="stat-description">
-                consequatur quae deba proa mestra
-            </p> -->
-        </div>
-
-        <!-- Stat 2 -->
-        <div class="stat-box">
-            <div class="icon">
-                <img src="../public/images/happy-clients.svg" alt="Icon 2">
-            </div>
-            <h3 class="stat-number">521</h3>
-            <h4 class="stat-title">Completed Projects</h4>
-            <!-- <p class="stat-description">
-                adipisi atque cum quia out
-            </p> -->
-        </div>
-
-        <!-- Stat 3 -->
-        <div class="stat-box">
-            <div class="icon">
-                <img src="../public/images/complete-projects.svg" alt="Icon 3">
-            </div>
-            <h3 class="stat-number">453</h3>
-            <h4 class="stat-title">Hours Of Support</h4>
-            <!-- <p class="stat-description">
-                out commond quaerera
-            </p> -->
-        </div>
-    </div>
-
-    <!-- Discuss Projects CTA -->
-    <div class="discuss-section">
-        <h2>Let’s Discuss your Projects</h2>
-        <p class="discuss-text">
-             We pride ourselves with our ability to perform and deliver results. Use the form
-            below to discuss your project needs with our team, we will get back asap.
+    <!-- body section  -->
+    <div class="services-section">
+        <h2>Services We Offer</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
         </p>
-        <a href="../Contact/contact.html" class="contact-btn">Contact Us</a>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-lightbulb"></i>
+                    <h3>Custom Software Development</h3>
+                    <p>
+                        We specialize in custom software development tailored to meet your unique business needs. Our
+                        team
+                        of expert developers designs and builds scalable, secure, and high-performance software
+                        solutions
+                        that align with your goals. Whether you need enterprise applications, SaaS platforms, CRM
+                        solutions,
+                        or automation tools, we deliver robust, future-ready solutions with seamless user experiences.
+                        Our end-to-end development process covers everything from requirement analysis and UI/UX design
+                        to
+                        development, testing, and deployment.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-server"></i>
+                    <h3>Website Design & Development</h3>
+                    <p>
+                        We create stunning, high-performance websites that enhance your brand, engage your audience, and
+                        drive
+                        conversions. Whether you need a business website, e-commerce platform, portfolio, or custom web
+                        application, we bring your vision to life with modern UI/UX design, responsive layouts, and
+                        cutting-edge
+                        technologies. Our expert team ensures your website is SEO-friendly, fast-loading,
+                        mobile-optimized, and
+                        secure, helping you stay ahead of the competition.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-share-alt"></i>
+                    <h3>Mobile App Development</h3>
+                    <p>
+                        We specialize in custom mobile app development that delivers seamless user experiences, high
+                        performance,
+                        and scalability. Whether you need a native iOS app, Android app, or cross-platform solution, our
+                        expert
+                        developers craft feature-rich, secure, and engaging applications tailored to your business
+                        needs. From
+                        startups to enterprises, we help brands turn ideas into powerful mobile solutions with
+                        cutting-edge
+                        technologies like AI/ML, Cloud integration etc. Our mobile apps are designed to be fast,
+                        intuitive, and
+                        conversion-driven, ensuring maximum user engagement and business growth.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Service 4 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-wrench"></i>
+                    <h3>Software Maintenance & Support Services</h3>
+                    <p>
+                        We offer comprehensive software maintenance and support services to ensure your business
+                        applications
+                        remain secure, efficient, and up to date. Whether you need bug fixes, performance optimization,
+                        security
+                        updates, or feature enhancements, our expert team provides end-to-end software maintenance
+                        solutions to
+                        maximize your software’s reliability and longevity. We specialize in preventive, corrective,
+                        adaptive, and
+                        perfective maintenance for custom software, enterprise applications, web platforms, and mobile
+                        apps.
+                        With our proactive monitoring and timely updates, we help businesses minimize downtime, enhance
+                        security,
+                        and optimize software performance.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Service 5 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-graduation-cap"></i>
+                    <h3>Internship & Project Training</h3>
+                    <p>
+                        We offer a comprehensive Internship & Project Training program designed to equip students and
+                        professionals
+                        with real-world experience, hands-on learning, and industry-relevant skills. Our internship
+                        program covers
+                        custom software development, web development, mobile app development, UI/UX design, database
+                        management,
+                        and cloud computing, ensuring a practical and job-ready learning experience. With mentorship
+                        from industry
+                        experts, live projects, and a structured curriculum, we help you bridge the gap between
+                        academics and
+                        industry demands. Whether you're a student, fresher, or aspiring developer, our internship will
+                        give you
+                        the expertise needed to excel in today’s competitive tech industry.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Service 6 -->
+            <a href="#" style="text-decoration: none;">
+                <div class="service-card">
+                    <i class="fa fa-bullhorn"></i>
+                    <h3>Digital Marketing Services</h3>
+                    <p>
+                        We provide result-driven digital marketing services to help businesses enhance their online
+                        presence, drive
+                        targeted traffic, and maximize conversions. Our comprehensive digital marketing strategies
+                        include SEO,
+                        social media marketing, PPC advertising, content marketing, and email marketing, ensuring your
+                        brand stands
+                        out in the competitive digital landscape. We use data-driven insights, advanced tools, and
+                        innovative marketing
+                        techniques to create personalized campaigns that boost brand visibility, engagement, and revenue
+                        growth.
+                        Whether you’re a startup, small business, or enterprise, our expert team is dedicated to
+                        achieving your
+                        digital success.
+                    </p>
+                </div>
+            </a>
+        </div>
     </div>
-</div>
 
 
 
-<!--Team mets-->
-<!-- 
-<div class="team-section">
-    <h2>Team</h2>
-    <p class="team-subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </p>
+    <!-- Whye we choos us  -->
 
-    <div class="team-grid">
-    
-        <div class="team-card">
-            <img src="../public/images/team-1.jpg" alt="Jhona Bi" class="team-photo" />
-            <h3>Jhona Bi</h3>
-            <p class="team-position">Application Manager</p>
-            <div class="team-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>Expertise and <span>Experience</span></h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-clipboard-check"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>Quality <span>Products</span></h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>Customer-Centric <span>Approach</span></h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3><span>Competitive</span> Pricing</h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3><span>Timely</span> Delivery</h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-cog"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3><span>24/7</span> Support</h3>
+                            <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                            \
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tesimonals -->
+    <div class="testimonials-slider-section">
+        <h2>What Clients Say</h2>
+        <p class="testimonials-subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </p>
+
+        <!-- SLIDER CONTAINER -->
+        <div class="slider-container">
+            <div class="slider-track">
+                <!-- SLIDE 1 -->
+                <div class="slide">
+                    <div class="testimonial-card">
+                        <img src="../public/images/santosh.9a5f613784a02824c527.jpeg" alt="Person 1"
+                            class="testimonial-img" />
+                        <div class="testimonial-content">
+                            <h3>Mr Santosh Kaveri</h3>
+                            <span class="job-title">Founder & Innovater</span>
+                            <div class="star-rating">★★★★★</div>
+                            <p>
+                                Thanks to the attractive web solution team who made such a wonderful website for our
+                                foundation. Extreme patience and very pleasant and positive attitude. We loved getting
+                                our
+                                website created by them and shall ever cherish it.
+                            </p>
+                            <div class="quote-icon">❝</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="../public/images/download.jpg" alt="Person 2" class="testimonial-img" />
+                        <div class="testimonial-content">
+                            <h3>Mr. Girish Badragond</h3>
+                            <span class="job-title">Scientist, Founder & Innovator</span>
+                            <div class="star-rating">★★★★★</div>
+                            <p>
+                                Very nice kind and supportive they've always improved and reverting back to all my
+                                queries
+                                and I'm more happy to recommend them.
+                            </p>
+                            <div class="quote-icon">❝</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="slide">
+                    <div class="testimonial-card">
+                        <img src="../public/images/dinkar.08322f3f471c05e5e75c.png" alt="Person 3"
+                            class="testimonial-img" />
+                        <div class="testimonial-content">
+                            <h3>John Doe</h3>
+                            <span class="job-title">Adv. Dinkar Shetty</span>
+                            <div class="star-rating">★★★★★</div>
+                            <p>
+                                infyNow and their team are knowledgeable, transparent, and passionate at what they are
+                                doing. They completed the project in these trying times within the stipulated period.
+                                They
+                                were patient to all my questions and queries and were ready to implement the changes
+                                requested by me. Overall extremely satisfied.
+                            </p>
+                            <div class="quote-icon">❝</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="../public/images/abhishek.e44a4e228eb219e8ef3a.jpg" alt="Person 4"
+                            class="testimonial-img" />
+                        <div class="testimonial-content">
+                            <h3>Mr. Mahesh Shahapurkar</h3>
+                            <span class="job-title">Owner & Founder</span>
+                            <div class="star-rating">★★★★★</div>
+                            <p>
+                                Amazing service at an affordable price. thanks to your team for my website it's a
+                                pleasure
+                                working with infyNow. The team understands briefs well and responds promptly to satisfy
+                                requirements.
+                            </p>
+                            <div class="quote-icon">❝</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-       
-        <div class="team-card">
-            <img src="../public/images/team-2.jpg" alt="Soni Awesome" class="team-photo" />
-            <h3>Soni Awesome</h3>
-            <p class="team-position">Social Media</p>
-            <div class="team-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-      
-        <div class="team-card">
-            <img src="../public/images/team-3.jpg" alt="Andrio Will" class="team-photo" />
-            <h3>Andrio Will</h3>
-            <p class="team-position">Content Writer</p>
-            <div class="team-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        
-        <div class="team-card">
-            <img src="../public/images/team-4.jpg" alt="Afa Jonson" class="team-photo" />
-            <h3>Afa Jonson</h3>
-            <p class="team-position">Business Manager</p>
-            <div class="team-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+        <!-- SLIDER INDICATORS -->
+        <div class="slider-indicators">
+            <span data-slide="0" class="active"></span>
+            <span data-slide="1"></span>
         </div>
     </div>
-</div> -->
-
-<div id="scrollToTop" aria-label="Scroll to top">↑</div>
 
 
-<!-- Footer  -->
 
-<div class="footer-section">
-    <div class="footer-top">
-        <!-- Company/About Column -->
-        <div class="footer-column footer-about">
-            <img src="../public/images/logo.png" alt="Company Logo" class="footer-logo" />
-            <p>
-                We strive to deliver more efficient, effective and relevant quality services and solutions. Get the real
-                world IT industrial experience with Infynow.
-            </p>
-            <h4>Follow Us</h4>
-            <div class="footer-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <div id="scrollToTop" aria-label="Scroll to top">↑</div>
+
+
+    <!-- Footer  -->
+
+    <div class="footer-section">
+        <div class="footer-top">
+            <!-- Company/About Column -->
+            <div class="footer-column footer-about">
+                <img src="../public/images/logo.png" alt="Company Logo" class="footer-logo" />
+                <p>
+                    We strive to deliver more efficient, effective, and relevant quality services and solutions. Get the
+                    real world IT industrial experience with Infynow.
+                </p>
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/infynow/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/infynow/status/1331058651222589440" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/infynowsoftware_solutions/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Useful Links Column -->
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="../Home/index.html">Home</a></li>
+                    <li><a href="../Training/training.html">Training</a></li>
+                    <li><a href="../About/about.html">About us</a></li>
+                    <li><a href="../Career/career.html">Careers</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="../Contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacts Column -->
+            <div class="footer-column footer-contacts">
+                <h4>Contacts</h4>
+                <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006
+                </p>
+                <p>Kolekar Tikati, Bapuram Nagar, Manganwlar Peth, Kolhapur, Maharashtra 416012</p>
+                <p>(+91)9513421639, (+91)9611860475</p>
+                <p><a href="mailto:info@example.com" class="email-link">info@infynow.com</a></p>
             </div>
         </div>
 
-        <!-- Useful Links Column -->
-        <div class="footer-column">
-            <h4>Useful Links</h4>
-            <ul>
-                <li><a href="../Home/index.html">Home</a></li>
-                <li><a href="../Training/training.html">Training</a></li>
-                <li><a href="../About/about.html">About us</a></li>
-                <li><a href="../Career/career.html">Careers</a></li>
-                <li><a href="../Contact/contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Contacts Column -->
-        <div class="footer-column footer-contacts">
-            <h4>Contacts</h4>
-            <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006</p>
-            <p>(+91)9513421639, (+91)9611860475</p>
-            <p>infynow@gmail.com</p>
-
-            <!-- <h4>Newsletter</h4>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Email Address" required />
-                <button type="submit">Go</button>
-            </form> -->
+        <div class="footer-bottom">
+            <p>Infynow © <span id="current-year"></span>, All Rights Reserved</p>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>Infynow © 2022, All Right Reserved</p>
-    </div>
-</div>
 
 
-<script src="Home.js"></script>
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="Home.js"></script>
 
 </body>
 

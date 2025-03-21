@@ -1,0 +1,569 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020d26;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 4rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: #ff5722;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ff5722;
+    animation: underlineExpand 1.5s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Product Section Styles */
+.product-section {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.product-header {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    color: #ff5722;
+    margin-bottom: 0.5rem;
+}
+
+.underline {
+    height: 3px;
+    width: 80px;
+    background-color: #ff5722;
+    margin-bottom: 1.5rem;
+}
+
+.product-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.features-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid #ff5722;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #ff5722;
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(2, 13, 38, 0.8), rgba(2, 13, 38, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes underlineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .header {
+        padding: 2rem 0;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .product-title {
+        font-size: 1.8rem;
+    }
+    
+    .features-title {
+        font-size: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-section p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .product-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-description {
+        font-size: 0.95rem;
+    }
+    
+    .feature-card {
+        padding: 1.2rem;
+    }
+}
+
+/* 
+navbar */
+
+/* ------------------------------
+   Top Navbar Container
+------------------------------ */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #020d26;
+    z-index: 1000;
+    border: 2px solid #ff5722;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Prevent header content from hiding under fixed navbar */
+  header {
+    padding-top: 100px;
+  }
+  
+  /* ------------------------------
+     Logo with Hover Animation
+  ------------------------------ */
+  .logo {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .logo img {
+    display: block;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+  
+  .logo:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Shine overlay for the logo */
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 165, 0, 0.4) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+  }
+  
+  .logo:hover::before {
+    left: 100%;
+  }
+  
+  /* ------------------------------
+     Desktop Navigation Menu
+  ------------------------------ */
+  .main-nav {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav li a:hover {
+    color: #eb6e0d;
+  }
+  
+  /* ------------------------------
+     Dropdown Menu (Desktop)
+  ------------------------------ */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1040;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu li {
+    list-style: none;
+  }
+  
+  .dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+    color: #eb6e0d;
+  }
+  
+  /* ------------------------------
+     Contact Button
+  ------------------------------ */
+  .Contact {
+    background-color: transparent;
+    border: 1px solid #eb6e0d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .Contact:hover {
+    background-color: #eb6e0d;
+    color: #1a1040;
+  }
+  
+  /* ------------------------------
+     Mobile Menu Button
+  ------------------------------ */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  /* ------------------------------
+     Mobile Sidebar Menu
+  ------------------------------ */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #020d26;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+  }
+  
+  .mobile-sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .sidebar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Sidebar Dropdowns */
+  .mobile-sidebar .dropdown {
+    position: relative;
+  }
+  
+  .mobile-sidebar .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: auto;
+  }
+  
+  .mobile-sidebar .dropdown-menu li a {
+    padding-left: 1rem;
+  }
+  
+  /* ------------------------------
+     Sidebar Close Button (Mobile)
+  ------------------------------ */
+  .sidebar-header .close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sidebar-header .close-btn:hover {
+    color: orange;
+    transform: scale(1.1);
+  }
+  
+  /* ------------------------------
+     Responsive (Mobile)
+  ------------------------------ */
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: block;
+    }
+    .main-nav {
+      display: none;
+    }
+  }
+
+  .contact-btn {
+    display: inline-block;
+    background-color: #eb6e0d;
+    color: #1b1528;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3sease;
+}
+
+option{
+    background-color: #27203B;
+    
+}
