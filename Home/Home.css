@@ -711,14 +711,6 @@
     text-align: center;
 }
 
-/* Remove this conflicting selector that's causing the alignment issue */
-/* 
-.services-section,
-h2 {
-    color: #eb6e0d;
-}
-*/
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -741,24 +733,12 @@ h2 {
     position: relative;
 }
 
-.service-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-.service-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.service-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-.service-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-.service-card:nth-child(5) {
-    animation-delay: 0.5s;
-}
-.service-card:nth-child(6) {
-    animation-delay: 0.6s;
-}
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
 
 .service-card:hover {
     transform: translateY(-5px);
@@ -781,15 +761,21 @@ h2 {
 
 .service-card i {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #eb6e0d;
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
+/* New smooth, subtle icon animation */
 .service-card:hover i {
-    transform: scale(1.2);
-    animation: pulse 1.5s infinite;
+    animation: iconSmooth 1s ease;
+}
+
+@keyframes iconSmooth {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
 }
 
 .service-card .content-wrapper {
@@ -838,49 +824,22 @@ h2 {
     font-size: 0.95rem;
     line-height: 1.5;
     color: #ccc;
-    flex-grow: 1; /* Allow paragraph to take remaining space */
-    overflow: hidden; /* Prevent text overflow */
+    flex-grow: 1;
+    overflow: hidden;
 }
 
-/* Rest of the CSS remains the same */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulseBorder {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 .service-card.reveal {
     opacity: 0;
@@ -930,18 +889,10 @@ html {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.benefit:nth-child(1) {
-    animation-delay: 0.2s;
-}
-.benefit:nth-child(2) {
-    animation-delay: 0.4s;
-}
-.benefit:nth-child(3) {
-    animation-delay: 0.6s;
-}
-.benefit:nth-child(4) {
-    animation-delay: 0.8s;
-}
+.benefit:nth-child(1) { animation-delay: 0.2s; }
+.benefit:nth-child(2) { animation-delay: 0.4s; }
+.benefit:nth-child(3) { animation-delay: 0.6s; }
+.benefit:nth-child(4) { animation-delay: 0.8s; }
 
 .benefit-content {
     display: flex;
@@ -962,10 +913,7 @@ html {
     font-weight: 500;
 }
 
-.benefit-text h3 span {
-    color: #eb6e0d;
-}
-
+.benefit-text h3 span { color: #eb6e0d; }
 .benefit-text p {
     color: #ccc;
     font-size: 16px;
@@ -983,10 +931,7 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
-.benefit-icon:hover {
-    transform: scale(1.1);
-}
-
+.benefit-icon:hover { transform: scale(1.1); }
 .benefit-icon i {
     font-size: 28px;
     color: #fff;
@@ -1018,61 +963,32 @@ html {
     padding-left: 20px;
 }
 
-.benefit:nth-child(1) .benefit-icon i {
-    transform: rotate(45deg);
-}
-
-.benefit:nth-child(4) .benefit-icon i {
-    color: #eb6e0d;
-}
+.benefit:nth-child(1) .benefit-icon i { transform: rotate(45deg); }
+.benefit:nth-child(4) .benefit-icon i { color: #eb6e0d; }
 
 /* Responsive fixes for consistent card sizing */
 @media (max-width: 992px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .service-card {
-        height: 300px;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-header h2 {
-        font-size: 36px;
-    }
-
-    .benefit-text h3 {
-        font-size: 24px;
-    }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-card { height: 300px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .section-header h2 { font-size: 36px; }
+    .benefit-text h3 { font-size: 24px; }
 }
 
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-card {
-        height: auto;
-        min-height: 230px;
-    }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { height: auto; min-height: 230px; }
 }
 
 @media (max-width: 576px) {
     .benefit-content {
         flex-direction: column !important;
     }
-
     .benefit-text {
         text-align: center !important;
         padding: 0 0 20px 0 !important;
     }
-
-    .section-header h2 {
-        font-size: 30px;
-    }
+    .section-header h2 { font-size: 30px; }
 }
   /*****************************************************
    * 8. WHY CHOOSE US SECTION
