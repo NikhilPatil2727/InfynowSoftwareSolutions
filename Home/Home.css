@@ -1244,355 +1244,8 @@ html {
    * 9. TESTIMONIALS SECTION
    *****************************************************/
    /* Base Section & Typography */
-.services-section {
-  background-color: #020d26;
-  padding: 60px 20px;
-  text-align: center;
-  color: #fff;
-}
+/* TESTIMONIALS SECTION */
 
-.services-section h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.services-section > p {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0.5rem auto 2rem;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-/* Maintain header color consistency */
-.services-section,
-h2 {
-  color: #eb6e0d;
-}
-
-/* Grid Layout */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Ensure anchor tags behave as flex containers for equal card heights */
-.services-grid a {
-  display: flex;
-}
-
-/* Service Card Styles */
-.service-card {
-  background-color: #251b34;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Ensure equal height across cards */
-}
-
-/* Animation delays for each card */
-.service-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.service-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.service-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.service-card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.service-card:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.service-card:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-/* Hover Effects */
-.service-card:hover {
-  transform: translateY(-5px);
-  background-color: #2a1c3a;
-  box-shadow: 0 5px 15px rgba(235, 110, 13, 0.3);
-}
-
-.service-card:hover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 8px;
-  border: 2px solid #eb6e0d;
-  animation: pulseBorder 1.5s infinite;
-  pointer-events: none;
-}
-
-/* Icon styling */
-.service-card i {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #eb6e0d;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover i {
-  transform: scale(1.2);
-  animation: pulse 1.5s infinite;
-}
-
-/* Headings & Text */
-.service-card h3,
-.service-card p {
-  transition: color 0.3s ease;
-}
-
-.service-card:hover h3 {
-  color: #eb6e0d;
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  position: relative;
-}
-
-.service-card h3::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #eb6e0d;
-  transition: width 0.3s ease;
-}
-
-.service-card:hover h3::after {
-  width: 40px;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #ccc;
-}
-
-/* Keyframe Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes pulseBorder {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Additional styles for container, section header, and benefits if needed */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-  padding-top: 60px;
-}
-
-.section-header h2 {
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #eb6e0d;
-}
-
-.section-header p {
-  font-size: 18px;
-  color: #ccc;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  padding-bottom: 60px;
-}
-
-.benefit {
-  position: relative;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.benefit:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.benefit:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.benefit:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.benefit:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.benefit-content {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px;
-}
-
-.benefit-text {
-  flex: 1;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.benefit-text h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.benefit-text h3 span {
-  color: #eb6e0d;
-}
-
-.benefit-text p {
-  color: #ccc;
-  font-size: 16px;
-}
-
-.benefit-icon {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  border: 2px solid #eb6e0d;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.benefit-icon:hover {
-  transform: scale(1.1);
-}
-
-.benefit-icon i {
-  font-size: 28px;
-  color: #fff;
-}
-
-.number {
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  background-color: #eb6e0d;
-  color: #1a0933;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.benefit:nth-child(even) .benefit-content {
-  flex-direction: row-reverse;
-}
-
-.benefit:nth-child(even) .benefit-text {
-  text-align: left;
-  padding-right: 0;
-  padding-left: 20px;
-}
-
-.benefit:nth-child(1) .benefit-icon i {
-  transform: rotate(45deg);
-}
-
-.benefit:nth-child(4) .benefit-icon i {
-  color: #eb6e0d;
-}
-
-@media (max-width: 992px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-header h2 {
-    font-size: 36px;
-  }
-
-  .benefit-text h3 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 576px) {
-  .benefit-content {
-    flex-direction: column !important;
-  }
-
-  .benefit-text {
-    text-align: center !important;
-    padding: 0 0 20px 0 !important;
-  }
-
-  .section-header h2 {
-    font-size: 30px;
-  }
-}
 .testimonials-slider-section {
   background-color: #020d26;
   color: #fff;
@@ -1605,7 +1258,7 @@ html {
 .testimonials-slider-section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #eb6e0d;
+  color: #ff5722;
 }
 
 .testimonials-subtitle {
@@ -1640,7 +1293,7 @@ html {
 .testimonial-card {
   position: relative;
   background-color: transparent;
-  border: 2px solid #eb6e0d;
+  border: 2px solid #ff5722;
   border-radius: 4px;
   padding: 30px;
   max-width: 45%;
@@ -1648,7 +1301,8 @@ html {
   box-sizing: border-box;
   text-align: left;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .testimonial-img {
@@ -1656,11 +1310,14 @@ html {
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .testimonial-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .testimonial-card h3 {
@@ -1677,7 +1334,7 @@ html {
 }
 
 .star-rating {
-  color: #eb6e0d;
+  color: #ff5722;
   margin-bottom: 15px;
   font-size: 1rem;
 }
@@ -1693,7 +1350,7 @@ html {
   bottom: 10px;
   left: 10px;
   font-size: 2rem;
-  color: #eb6e0d;
+  color: #ff5722;
   opacity: 0.2;
 }
 
@@ -1712,22 +1369,39 @@ html {
 }
 
 .slider-indicators .active {
-  background-color: #eb6e0d;
+  background-color: #ff5722;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container {
+      grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+      font-size: 1.8rem;
+  }
+
+  .discuss-section h2 {
+      font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
   .testimonial-card {
-      flex-direction: column;
       max-width: 100%;
   }
 
-  .testimonial-img {
-      margin-right: 0;
-      margin-bottom: 20px;
+  .slide {
+      flex-direction: column;
   }
 }
-
-
   
   /*  Footer Section */
   .footer-section {
@@ -1939,5 +1613,8 @@ html {
       font-size: 28px;
     }
   }
+
+
   
+
   

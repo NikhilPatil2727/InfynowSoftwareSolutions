@@ -73,8 +73,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
+// navbar 
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
   }
+
+
+// ARROW functionality code 
+document.getElementById('scrollToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+
+
+

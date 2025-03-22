@@ -34,24 +34,24 @@ showSlide(0);
 
 
 //footer date dynamic 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const currentYear = new Date().getFullYear();
   document.getElementById('current-year').textContent = currentYear;
 });
 
 //mobile side bar toogle menu 
 function toggleMobileMenu() {
-    const sidebar = document.getElementById('mobile-sidebar');
-    sidebar.classList.toggle('active');
-  }
+  const sidebar = document.getElementById('mobile-sidebar');
+  sidebar.classList.toggle('active');
+}
 
 
 // ARROW functionality code 
-  document.getElementById('scrollToTop').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+document.getElementById('scrollToTop').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 
 
@@ -109,5 +109,75 @@ function toggleMobileMenu() {
 //     });
 //   });
 // });
+
+const chatInput = document.querySelector('.chat-input textarea');
+const sendChatBtn = document.querySelector('#sendBTN');
+const chatbox = document.querySelector(".chatbox");
+const chatBot = document.getElementById("chatBot");
+const chatIcon = document.getElementById("chatIcon");
+
+let userMessage;
+const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your actual API key
+
+function toggleChatbot() {
+  chatBot.style.display = chatBot.style.display === "block" ? "none" : "block";
+}
+
+const createChatLi = (message, className) => {
+  const chatLi = document.createElement("li");
+  chatLi.classList.add("chat", className);
+  chatLi.innerHTML = `<p>${message}</p>`;
+  return chatLi;
+};
+
+const generateResponse = async (incomingChatLi) => {
+  const messageElement = incomingChatLi.querySelector("p");
+
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: userMessage }],
+        temperature: 0.7
+      })
+    });
+
+    const data = await response.json();
+    messageElement.textContent = data.choices[0].message.content.trim();
+  } catch (error) {
+    messageElement.textContent = "Error: Failed to fetch response";
+  } finally {
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+  }
+};
+
+const handleChat = () => {
+  userMessage = chatInput.value.trim();
+  if (!userMessage) return;
+
+  chatbox.appendChild(createChatLi(userMessage, "chat-outgoing"));
+  chatInput.value = "";
+  chatbox.scrollTo(0, chatbox.scrollHeight);
+
+  setTimeout(() => {
+    const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
+    chatbox.appendChild(incomingChatLi);
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+    generateResponse(incomingChatLi);
+  }, 600);
+};
+
+sendChatBtn.addEventListener("click", handleChat);
+chatInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    handleChat();
+  }
+});
 
 
