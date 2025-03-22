@@ -699,7 +699,7 @@
     font-size: 2rem;
     margin-bottom: 0.5rem;
     text-align: center;
-    color: #eb6e0d;
+    color: #ff5722;
 }
 
 .services-section > p {
@@ -862,13 +862,14 @@ html { scroll-behavior: smooth; }
     text-align: center;
     margin-bottom: 60px;
     padding-top: 60px;
+    color: #ff5722;
 }
 
 .section-header h2 {
     font-size: 42px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #eb6e0d;
+    color: #ff5722;
 }
 
 .section-header p {
@@ -1011,7 +1012,7 @@ html { scroll-behavior: smooth; }
     font-size: 42px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #eb6e0d;
+    color: #ff5722;
   }
   
   .section-header p {
