@@ -698,6 +698,8 @@
 .services-section h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    text-align: center;
+    color: #eb6e0d;
 }
 
 .services-section > p {
@@ -706,16 +708,20 @@
     margin: 0.5rem auto 2rem;
     line-height: 1.6;
     color: #ccc;
+    text-align: center;
 }
 
+/* Remove this conflicting selector that's causing the alignment issue */
+/* 
 .services-section,
 h2 {
     color: #eb6e0d;
 }
+*/
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -729,6 +735,10 @@ h2 {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
+    height: 280px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .service-card:nth-child(1) {
@@ -804,6 +814,9 @@ h2 {
     margin-bottom: 0.5rem;
     color: #fff;
     position: relative;
+    height: 40px; /* Fixed height for all titles */
+    display: flex;
+    align-items: center;
 }
 
 .service-card h3::after {
@@ -825,11 +838,11 @@ h2 {
     font-size: 0.95rem;
     line-height: 1.5;
     color: #ccc;
+    flex-grow: 1; /* Allow paragraph to take remaining space */
+    overflow: hidden; /* Prevent text overflow */
 }
 
-
-
-
+/* Rest of the CSS remains the same */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1013,7 +1026,16 @@ html {
     color: #eb6e0d;
 }
 
+/* Responsive fixes for consistent card sizing */
 @media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-card {
+        height: 300px;
+    }
+    
     .benefits-grid {
         grid-template-columns: 1fr;
     }
@@ -1024,6 +1046,17 @@ html {
 
     .benefit-text h3 {
         font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        height: auto;
+        min-height: 230px;
     }
 }
 
@@ -1041,18 +1074,6 @@ html {
         font-size: 30px;
     }
 }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
   /*****************************************************
    * 8. WHY CHOOSE US SECTION
    *****************************************************/
