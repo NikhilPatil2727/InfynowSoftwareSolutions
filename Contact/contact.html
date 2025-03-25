@@ -6,43 +6,46 @@
     <title>Contact Us - InfyNow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="contact.css">
-</head> 
+</head>
 <body>
   <header>
     <nav>
       <div class="logo">
         <a href="/Home/index.html"><img src="/logo.png" alt="TECH Logo" /></a>
-        
-    </div>
-      
+      </div>
+
       <!-- Desktop Navigation Menu -->
       <ul class="main-nav">
         <li><a href="/Home/index.html">Home</a></li>
         <li class="dropdown">
           <a href="#">Services</a>
           <ul class="dropdown-menu">
-            <li><a href="/Services/webDev/webDev.html">Web Development</a></li>
-            <li><a href="/Services/AppDev/appDev.html">Application Development</a></li>
-            <li><a href="/Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-            <li><a href="/Training/training.html">Internship &amp; Projects</a></li>
+            <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
+            <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
+            <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
+            <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+            <li><a href="../Training/training.html">Internship & Project Training</a></li>
+            <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
           </ul>
         </li>
         <li><a href="/Training/training.html">Training</a></li>
         <li><a href="/About/about.html">About</a></li>
         <li><a href="/Career/career.html">Careers</a></li>
+        <li><a href="../Product/product.html">Products</a></li>
+        <li><a href="../Blogs/blogs.html">Blogs</a></li>
         <li>
           <a href="/Contact/contact.html">
             <button class="Contact">Contact</button>
           </a>
         </li>
       </ul>
-      
+
       <!-- Hamburger Button (Mobile Only) -->
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
         <i class="fa fa-bars"></i>
       </button>
     </nav>
-    
+
     <!-- Mobile Sidebar Menu -->
     <div class="mobile-sidebar" id="mobile-sidebar">
       <div class="sidebar-header">
@@ -56,15 +59,16 @@
           <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none ; color: #ff5722;">Services</a>
             <ul class="dropdown-menu">
-              <li><a href="../webDev/webDev.html">Web Development</a></li>
-              <li><a href="../AppDev/appDev.html">Application Development</a></li>
-              <li><a href="../SoftwareSolutions/softSol.html">Software Solutions</a></li>
-              <li><a href="/Training/training.html">Internship &amp; Projects</a></li>
+              <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
+              <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
+              <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
+              <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+              <li><a href="../Training/training.html">Internship & Project Training</a></li>
+              <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
             </ul>
           </li>
           <li>
             <a href="/Training/training.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Training</a>
-
           </li>
           <li>
             <a href="/About/about.html" class="nav-link" style="text-decoration: none; color: #ff5722;">About</a>
@@ -73,133 +77,149 @@
             <a href="/Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a>
           </li>
           <li>
+            <a href="../Product/product.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Products</a>
+          </li>
+          <li>
+            <a href="../Blogs/blogs.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Blogs</a>
+          </li>
+          <li>
             <a href="/Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </header>
-    <div class="hero-section">
-        <h1>CONTACT US</h1>
-        <p>Get in touch with us for any questions or inquiries</p>
-    </div>
-    <div class="contact-container">
-        <div class="form-section">
-            <h2 class="section-title">Get In Touch</h2>
-            <form id="contactForm" onsubmit="return validateForm(event)">
-                <div class="input-group">
-                    <input type="text" id="name" required>
-                    <label>Full Name</label>
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email" required>
-                    <label>Email Address</label>
-                </div>
-                <div class="input-group">
-                    <input type="tel" id="phone" required>
-                    <label>Mobile Number</label>
-                </div>
-                <div class="input-group">
-                    <select id="subject" required>
-                        <option value="">Select Subject</option>
-                        <option value="business">Business Inquiry</option>
-                        <option value="support">Technical Support</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <textarea id="message" required></textarea>
-                    <label>Your Message</label>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-        <div class="info-section">
-            <h2 class="section-title">Contact Information</h2>
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <p>F4 First floor, Star Tower, Oppo Canara Bank,<br>
-                   Khanapur Road near RPD Cross,<br>
-                   Tilakwadi Belagavi 590006</p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-envelope"></i>
-                <p>infynow@gmail.com</p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-phone-alt"></i>
-                <p>(+91) 9513421639<br>(+91) 9611860475</p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-globe"></i>
-                <p>www.infynow.com</p>
-            </div>
-            <div class="social-links">
-                <h3>Follow Us:</h3>
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="map-section">
-        <h2 class="section-title">Our Location</h2>
-        <div class="map-container" id="map"></div>
-    </div>
-    <div id="scrollToTop" aria-label="Scroll to top">↑</div>
 
-    <!-- FOOTER -->
-    <div class="footer-section">
-      <div class="footer-top">
-          <!-- Company/About Column -->
-          <div class="footer-column footer-about">
-              <img src="../public/images/logo.png" alt="Company Logo" class="footer-logo" />
-              <p>
-                  We strive to deliver more efficient, effective and relevant quality services and solutions. Get the real
-                  world IT industrial experience with Infynow.
-              </p>
-              <h4>Follow Us</h4>
-              <div class="footer-socials">
-                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-          </div>
-  
-          <!-- Useful Links Column -->
-          <div class="footer-column">
-              <h4>Useful Links</h4>
-              <ul>
-                  <li><a href="../Home/index.html">Home</a></li>
-                  <li><a href="../Training/training.html">Training</a></li>
-                  <li><a href="../About/about.html">About us</a></li>
-                  <li><a href="../Career/career.html">Careers</a></li>
-                  <li><a href="../Contact/contact.html">Contact</a></li>
-              </ul>
-          </div>
-  
-          <!-- Contacts Column -->
-          <div class="footer-column footer-contacts">
-              <h4>Contacts</h4>
-              <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006</p>
-              <p>(+91)9513421639, (+91)9611860475</p>
-              <p>infynow@gmail.com</p>
-  
-              <!-- <h4>Newsletter</h4>
-              <form class="newsletter-form">
-                  <input type="email" placeholder="Email Address" required />
-                  <button type="submit">Go</button>
-              </form> -->
-          </div>
-      </div>
-  
-      <div class="footer-bottom">
-          <p>Infynow © 2022, All Right Reserved</p>
-      </div>
+  <div class="hero-section">
+    <div class="hero-background">
+      <h1>CONTACT US</h1>
+      <p>Get in touch with us for any questions or inquiries</p>
+    </div>
   </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
-    <script src="contact.js"></script>
+
+  <div class="contact-container">
+    <div class="form-section">
+      <h2 class="section-title">Get In Touch</h2>
+      <form id="contactForm" onsubmit="return validateForm(event)">
+        <div class="input-group">
+          <input type="text" id="name" required>
+          <label>Full Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" required>
+          <label>Email Address</label>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="phone" required>
+          <label>Mobile Number</label>
+        </div>
+        <div class="input-group">
+          <select id="subject" required>
+            <option value="">Select Subject</option>
+            <option value="business">Business Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <textarea id="message" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="info-section">
+      <h2 class="section-title">Contact Information</h2>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>F4 First floor, Star Tower, Oppo Canara Bank,<br>
+          Khanapur Road near RPD Cross,<br>
+          Tilakwadi Belagavi 590006</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>1st floor, Nirmala Plaza, Kolekar tikti bus stop,<br>
+          Mangalwar peth, Kolhapur - 416012,<br>
+          Maharashtra - India</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>info@infynow.com</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <p>(+91) 9513421639<br>(+91) 9611860475</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-globe"></i>
+        <p>www.infynow.com</p>
+      </div>
+      <div class="social-links">
+        <h3>Follow Us:</h3>
+        <a href="https://www.facebook.com/infynow/" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/infynow/status/1331058651222589440" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/infynowsoftware_solutions/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <h2 class="section-title">Our Location</h2>
+    <div class="map-container" id="map"></div>
+  </div>
+
+  <div id="scrollToTop" aria-label="Scroll to top">↑</div>
+
+  <!-- FOOTER -->
+  <div class="footer-section">
+    <div class="footer-top">
+      <!-- Company/About Column -->
+      <div class="footer-column footer-about">
+        <img src="../public/images/logo.png" alt="Company Logo" class="footer-logo" />
+        <p>
+          We strive to deliver more efficient, effective, and relevant quality services and solutions. Get the
+          real world IT industrial experience with Infynow.
+        </p>
+        <h4>Follow Us</h4>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/infynow/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/infynow/status/1331058651222589440" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/infynowsoftware_solutions/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Useful Links Column -->
+      <div class="footer-column">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="../Home/index.html">Home</a></li>
+          <li><a href="../Training/training.html">Training</a></li>
+          <li><a href="../About/about.html">About us</a></li>
+          <li><a href="../Career/career.html">Careers</a></li>
+          <li><a href="../Product/product.html">Products</a></li>
+          <li><a href="../Blogs/blogs.html">Blogs</a></li>
+          <li><a href="../Contact/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacts Column -->
+      <div class="footer-column footer-contacts">
+        <h4>Contacts</h4>
+        <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006</p>
+        <p>Kolekar Tikati, Bapuram Nagar, Manganwlar Peth, Kolhapur, Maharashtra 416012</p>
+        <p>(+91)9513421639, (+91)9611860475</p>
+        <p><a href="mailto:info@example.com" class="email-link">info@infynow.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Infynow © <span id="current-year"></span>, All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+  <script src="contact.js"></script>
 </body>
 </html>

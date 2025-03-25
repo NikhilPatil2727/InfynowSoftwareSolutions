@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship & Live Projects | Tech Company</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Internship & Project Training</title>
     <link rel="stylesheet" href="training.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,30 +14,40 @@
           <div class="logo">
             <a href="/Home/index.html"><img src="/logo.png" alt="TECH Logo" /></a>
           </div>
+          
+          <!-- Desktop Navigation Menu -->
           <ul class="main-nav">
             <li><a href="/Home/index.html">Home</a></li>
             <li class="dropdown">
               <a href="#">Services</a>
               <ul class="dropdown-menu">
-                <li><a href="/Services/webDev/webDev.html">Web Development</a></li>
-                <li><a href="/Services/AppDev/appDev.html">Application Development</a></li>
-                <li><a href="/Services/SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                <li><a href="/Training/training.html">Internship & Projects</a></li>
+                <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
+                <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
+                <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
+                <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+                <li><a href="../Training/training.html">Internship & Project Training</a></li>
+                <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
               </ul>
             </li>
             <li><a href="/Training/training.html">Training</a></li>
             <li><a href="/About/about.html">About</a></li>
             <li><a href="/Career/career.html">Careers</a></li>
+            <li><a href="../Product/product.html">Products</a></li>
+            <li><a href="../Blogs/blogs.html">Blogs</a></li>
             <li>
               <a href="/Contact/contact.html">
                 <button class="Contact">Contact</button>
               </a>
             </li>
           </ul>
+          
+          <!-- Hamburger Button (Mobile Only) -->
           <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
             <i class="fa fa-bars"></i>
           </button>
         </nav>
+        
+        <!-- Mobile Sidebar Menu -->
         <div class="mobile-sidebar" id="mobile-sidebar">
           <div class="sidebar-header">
             <button class="close-btn" onclick="toggleMobileMenu()">×</button>
@@ -49,10 +60,12 @@
               <li class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none ; color: #ff5722;">Services</a>
                 <ul class="dropdown-menu">
-                  <li><a href="../webDev/webDev.html">Web Development</a></li>
-                  <li><a href="../AppDev/appDev.html">Application Development</a></li>
-                  <li><a href="../SoftwareSolutions/softSol.html">Software Solutions</a></li>
-                  <li><a href="/Training/training.html">Internship &amp; Projects</a></li>
+                    <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
+                    <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
+                    <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
+                    <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+                    <li><a href="../Training/training.html">Internship & Project Training</a></li>
+                    <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
                 </ul>
               </li>
               <li>
@@ -65,134 +78,414 @@
                 <a href="/Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a>
               </li>
               <li>
+                <a href="#" class="nav-link" style="text-decoration: none; color: #ff5722;">Products</a>
+              </li>
+              <li>
+                <a href="../Blogs/blogs.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Blogs</a>
+              </li>
+              <li>
                 <a href="/Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
               </li>
             </ul>
           </div>
         </div>
       </header>
-    <header class="header">
-        <div class="header-content">
-            <h1 style="color: #ff5722;">Internship & Live Projects</h1>
-            <p style="color: white;">Shape Your Future with Hands-on Experience</p>
+    <div class="min-h-screen">
+
+        <!-- Hero Section with Background Image -->
+        <section class="hero" id="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <h1 class="heading animate-fadeIn">Internship & Project Training</h1>
+                <p class="subheading">"Launch your tech career with hands-on experience and expert mentorship"</p>
+                <div class="cta-container">
+                    <a href="#apply" class="cta-button">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section bg-dark">
+            <div class="container">
+                <h2 class="section-heading">Why Choose Our Internship & Project Training?</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-briefcase"></i>
+                        </div>
+                        <h3 class="card-title">Real-Time Project Exposure</h3>
+                        <p class="card-text">Gain hands-on experience by working on live projects.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-users"></i>
+                        </div>
+                        <h3 class="card-title">Expert-Led Training</h3>
+                        <p class="card-text">Learn from industry professionals with years of experience.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-code"></i>
+                        </div>
+                        <h3 class="card-title">Latest Technologies & Tools</h3>
+                        <p class="card-text">Industry-Relevant Curriculum by covering full-stack development training in Python, JavaScript, React, Node.js, Android, iOS, MySQL, MongoDB, AI/ML and more.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-award"></i>
+                        </div>
+                        <h3 class="card-title">Internship Certification</h3>
+                        <p class="card-text">Receive an industry-recognized certificate to boost your resume.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-building"></i>
+                        </div>
+                        <h3 class="card-title">Placement Assistance</h3>
+                        <p class="card-text">Get guidance on resume building, Mock interview, and job opportunities.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="icon-book"></i>
+                        </div>
+                        <h3 class="card-title">Personalized Mentorship</h3>
+                        <p class="card-text">One-on-one guidance to enhance your coding skills and career prospects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Domains Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-heading">Internship Domains We Offer</h2>
+                <div class="domain-grid">
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-code"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Software Development</h3>
+                            <p class="domain-text">Learn to build custom software solutions using modern frameworks.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-layout"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Web Development</h3>
+                            <p class="domain-text">Work on HTML, CSS, JavaScript, React, and backend technologies.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-smartphone"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Mobile App Development</h3>
+                            <p class="domain-text">Build Android & iOS apps using React.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-layout"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">UI/UX Design</h3>
+                            <p class="domain-text">Master Figma or Canva, wireframing, and interactive prototyping.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-database"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Database Management</h3>
+                            <p class="domain-text">Work with MySQL, MongoDB, Firebase and optimize data handling.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-brain"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">AI & Machine Learning</h3>
+                            <p class="domain-text">Explore Python, TensorFlow, Keras, PyTorch, and build AI-driven applications.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-code"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Python Programming</h3>
+                            <p class="domain-text">Learn Python from basics to advanced, automation, and AI integration.</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon">
+                            <i class="icon-cloud"></i>
+                        </div>
+                        <div class="domain-content">
+                            <h3 class="domain-title">Cloud Computing & DevOps</h3>
+                            <p class="domain-text">Get hands-on with AWS, Docker, Go Daddy and Kubernetes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section - UPDATED -->
+        <section class="section bg-dark">
+            <div class="container">
+                <h2 class="section-heading">Our Internship & Training Process</h2>
+               <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item left">
+                      <div class="timeline-number">1</div>
+                      <div class="timeline-content card">
+                        <i class="fas fa-user-graduate timeline-icon"></i>
+                        <h3 class="timeline-title">Consultation & Enrollment</h3>
+                        <p class="timeline-text">Understand your interests and guide you to the right domain.</p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                      <div class="timeline-number">2</div>
+                      <div class="timeline-content card">
+                        <i class="fas fa-chalkboard-teacher timeline-icon"></i>
+                        <h3 class="timeline-title">Structured Learning</h3>
+                        <p class="timeline-text">Covering theory, hands-on coding, and practical problem-solving.</p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                      <div class="timeline-number">3</div>
+                      <div class="timeline-content card">
+                        <i class="fas fa-laptop-code timeline-icon"></i>
+                        <h3 class="timeline-title">Live Project Work</h3>
+                        <p class="timeline-text">Apply your knowledge to real-world projects.</p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                      <div class="timeline-number">4</div>
+                      <div class="timeline-content card">
+                        <i class="fas fa-users timeline-icon"></i>
+                        <h3 class="timeline-title">Industry Exposure & Mentorship</h3>
+                        <p class="timeline-text">Gain insights from expert trainers and tech leaders.</p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                      <div class="timeline-number">5</div>
+                      <div class="timeline-content card">
+                        <i class="fas fa-certificate timeline-icon"></i>
+                        <h3 class="timeline-title">Certification & Career Support</h3>
+                        <p class="timeline-text">Receive certification and job placement assistance.</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Can Apply Section -->
+        <section class="section" id="apply">
+            <div class="container">
+                <h2 class="section-heading">Who Can Apply?</h2>
+                <div class="apply-grid">
+                    <div class="apply-card">
+                        <div class="apply-icon">
+                            <i class="icon-check"></i>
+                        </div>
+                        <div class="apply-content">
+                            <h3 class="apply-title">Students</h3>
+                            <p class="apply-text">Students pursuing B.E./B.Tech, MCA, BCA, M.Sc IT, B.Sc IT</p>
+                        </div>
+                    </div>
+                    <div class="apply-card">
+                        <div class="apply-icon">
+                            <i class="icon-check"></i>
+                        </div>
+                        <div class="apply-content">
+                            <h3 class="apply-title">Fresh Graduates</h3>
+                            <p class="apply-text">Fresh graduates looking for industry exposure</p>
+                        </div>
+                    </div>
+                    <div class="apply-card">
+                        <div class="apply-icon">
+                            <i class="icon-check"></i>
+                        </div>
+                        <div class="apply-content">
+                            <h3 class="apply-title">Professionals</h3>
+                            <p class="apply-text">Professionals seeking a career shift in IT</p>
+                        </div>
+                    </div>
+                    <div class="apply-card">
+                        <div class="apply-icon">
+                            <i class="icon-check"></i>
+                        </div>
+                        <div class="apply-content">
+                            <h3 class="apply-title">Entrepreneurs</h3>
+                            <p class="apply-text">Entrepreneurs wanting to learn software and app development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-container center">
+                    <!-- Apply Button -->
+                    <button id="openFormBtn" class="apply-btn">Apply for Internship</button>
+
+                    <!-- Popup Form Container -->
+                    <div id="popupForm" class="popup-form-overlay">
+                      <div class="popup-form-content">
+                        <span class="close-btn" id="closeFormBtn">&times;</span>
+                        <h2>Internship Application</h2>
+                        <form id="internshipForm">
+                            <div class="form-row">
+                              <div class="form-group">
+                                  <label for="firstName">First Name</label>
+                                  <input type="text" id="firstName" name="firstName" placeholder="Enter your Name" required />
+                              </div>
+                              <div class="form-group">
+                                  <label for="lastName">Last Name</label>
+                                  <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
+                              </div>
+                            </div>
+                            <!-- Email Field -->
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+                            </div>
+                            <!-- Phone Number Field -->
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+                            </div>
+                            <!-- Dropdown 1 -->
+                            <div class="form-group">
+                                <label for="domain">Select Domain</label>
+                                <select id="domain" name="domain" required>
+                                    <option value="" disabled selected>Select a domain</option>
+                                    <option value="software">Software Development</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="mobile">Mobile App Development</option>
+                                    <option value="ui">UI/UX Design</option>
+                                    <option value="database">Database Management</option>
+                                    <option value="ai">AI & Machine Learning</option>
+                                    <option value="python">Python Programming</option>
+                                    <option value="cloud">Cloud Computing & DevOps</option>
+                                </select>
+                            </div>
+                            <!-- Dropdown 2 -->
+                            <div class="form-group">
+                                <label for="duration">Duration</label>
+                                <select id="duration" name="duration" required>
+                                    <option value="" disabled selected>Select duration</option>
+                                    <option value="1month">1 Month</option>
+                                    <option value="2months">2 Months</option>
+                                    <option value="3months">3 Months</option>
+                                    <option value="6months">6 Months</option>
+                                </select>
+                            </div>
+                            <!-- Enquiry Details Field -->
+                            <div class="form-group">
+                                <label for="message">Additional Information</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Tell us about your background and what you hope to learn"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Application</button>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="scrollToTop" aria-label="Scroll to top">↑</div>
+
+         <!-- Popup Form Container -->
+     <div id="popupForm" class="popup-form-overlay">
+        <div class="popup-form-content">
+          <span class="close-btn" id="closeFormBtn">&times;</span>
+          <h2>Internship Application</h2>
+          <form id="internshipForm">
+              <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
+                </div>
+              </div>
+              <!-- Email Field -->
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+              </div>
+              <!-- Phone Number Field -->
+              <div class="form-group">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+              </div>
+              <!-- Dropdown 1 -->
+              <div class="form-group">
+                  <label for="domain">Select Domain</label>
+                  <select id="domain" name="domain" required>
+                      <option value="" disabled selected>Select a domain</option>
+                      <option value="software">Software Development</option>
+                      <option value="web">Web Development</option>
+                      <option value="mobile">Mobile App Development</option>
+                      <option value="ui">UI/UX Design</option>
+                      <option value="database">Database Management</option>
+                      <option value="ai">AI & Machine Learning</option>
+                      <option value="python">Python Programming</option>
+                      <option value="cloud">Cloud Computing & DevOps</option>
+                  </select>
+              </div>
+              <!-- Dropdown 2 -->
+              <div class="form-group">
+                  <label for="duration">Duration</label>
+                  <select id="duration" name="duration" required>
+                      <option value="" disabled selected>Select duration</option>
+                      <option value="1month">1 Month</option>
+                      <option value="2months">2 Months</option>
+                      <option value="3months">3 Months</option>
+                      <option value="6months">6 Months</option>
+                  </select>
+              </div>
+              <!-- Enquiry Details Field -->
+              <div class="form-group">
+                  <label for="message">Additional Information</label>
+                  <textarea id="message" name="message" rows="3" placeholder="Tell us about your background and what you hope to learn"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit Application</button>
+          </form>
         </div>
-    </header>
-    <main>
-        <section class="intro-section" id="introSection">
-            <div class="content-wrapper">
-                <h2>Launch Your Career with Us</h2>
-                <p>Right skills and opportunities are the two main essential requirements to urge on the road of success that ultimately results in a path of constant learning. Our Internship provides students hands-on experience to work in their desired field to get many opportunities.</p>
-                <p>We train students to implement their theoretical knowledge gained from institutions within real-time projects and gain valuable experience which will help them to be qualified for the desired job.</p>
-            </div>
-        </section>
-        <section class="tech-stack-section" id="techStackSection">
-            <h2>Technologies We Work With</h2>
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3 class="x">Frontend</h3>
-                    <p>Develop interactive and responsive user interfaces using modern web technologies.</p>
-                </div>
-                <div class="tech-category">
-                    <h3 class="x">Backend</h3>
-                    <p>Build robust server-side applications and APIs that power web applications.</p>
-                </div>
-                <div class="tech-category">
-                    <h3 class="x">Mobile</h3>
-                    <p>Create native mobile applications for iOS and Android platforms.</p>
-                </div>
-                <div class="tech-category">
-                    <h3 class="x">Other</h3>
-                    <p>Explore additional technologies like cloud services, databases, and DevOps tools.</p>
-                </div>
-            </div>
-        </section>
-        <section class="program-features" id="programFeatures">
-            <h2>Our Internship Program Includes</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Personalized Teaching</h3>
-                    <p>One-on-one mentoring and customized learning paths</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Mock Interviews</h3>
-                    <p>Practice interviews with industry experts</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Personality Development</h3>
-                    <p>Soft skills and professional growth training</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Resume Builder</h3>
-                    <p>Professional resume crafting assistance</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Live Project Experience</h3>
-                    <p>Work on real-world projects with our team</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Idea Exploration</h3>
-                    <p>Platform to develop and implement your ideas</p>
-                </div>
-            </div>
-        </section>
-        <section class="apply-section" id="applySection">
-            <h2>Apply for Internship</h2>
-            <form id="internshipForm" class="internship-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="college">College/University</label>
-                    <input type="text" id="college" name="college" required>
-                </div>
-                <div class="form-group">
-                    <label for="course">Course</label>
-                    <input type="text" id="course" name="course" required>
-                </div>
-                <div class="form-group">
-                    <label for="interest">Area of Interest</label>
-                    <select id="interest" name="interest" required>
-                        <option value="">Select your area of interest</option>
-                        <option value="web">Web Development</option>
-                        <option value="iot">Internet of Things</option>
-                        <option value="ml">Machine Learning</option>
-                        <option value="app">Application Development</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="resume">Resume/CV</label>
-                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                </div>
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
-        </section>
-    </main>
-    <div id="scrollToTop" aria-label="Scroll to top">↑</div>
+      </div> 
+  
+       
+    </div>
     <div class="footer-section">
         <div class="footer-top">
+            <!-- Company/About Column -->
             <div class="footer-column footer-about">
                 <img src="../public/images/logo.png" alt="Company Logo" class="footer-logo" />
                 <p>
-                    We strive to deliver more efficient, effective and relevant quality services and solutions. Get the real
-                    world IT industrial experience with Infynow.
+                    We strive to deliver more efficient, effective, and relevant quality services and solutions. Get the
+                    real world IT industrial experience with Infynow.
                 </p>
                 <h4>Follow Us</h4>
                 <div class="footer-socials">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/infynow/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/infynow/status/1331058651222589440" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/infynowsoftware_solutions/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
+
+            <!-- Useful Links Column -->
             <div class="footer-column">
                 <h4>Useful Links</h4>
                 <ul>
@@ -200,20 +493,28 @@
                     <li><a href="../Training/training.html">Training</a></li>
                     <li><a href="../About/about.html">About us</a></li>
                     <li><a href="../Career/career.html">Careers</a></li>
+                    <li><a href="../Product/product.html">Products</a></li>
+                    <li><a href="../Blogs/blogs.html">Blogs</a></li>
                     <li><a href="../Contact/contact.html">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- Contacts Column -->
             <div class="footer-column footer-contacts">
                 <h4>Contacts</h4>
-                <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006</p>
+                <p>F4 First floor, Star Tower, Opp Canara Bank, Khanapur Road Near RPD Cross, Tilakwadi Belagavi 590006
+                </p>
+                <p>Kolekar Tikati, Bapuram Nagar, Manganwlar Peth, Kolhapur, Maharashtra 416012</p>
                 <p>(+91)9513421639, (+91)9611860475</p>
-                <p>infynow@gmail.com</p>
+                <p><a href="mailto:info@infynow.com" class="email-link">info@infynow.com</a></p>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>Infynow © 2022, All Right Reserved</p>
+            <p>Infynow © <span id="current-year"></span>, All Rights Reserved</p>
         </div>
     </div>
+
     <script src="training.js"></script>
 </body>
 </html>

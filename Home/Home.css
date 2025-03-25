@@ -442,8 +442,9 @@
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 0.75rem; /* Further reduced font size */
-    color: #000;
+    color: white;
     width: 100%;
+    background-color: #020d26;
   }
   
   /* Fix for textarea resizing */
@@ -994,189 +995,136 @@ html { scroll-behavior: smooth; }
   /*****************************************************
    * 8. WHY CHOOSE US SECTION
    *****************************************************/
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Section Header */
-  .section-header {
-    text-align: center;
-    margin-bottom: 60px;
-    padding-top: 60px;
-  }
-  
-  .section-header h2 {
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #ff5722;
-  }
-  
-  .section-header p {
-    font-size: 18px;
-    color: #ccc;
-  }
-  
-  /* Benefits Grid Layout */
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    padding-bottom: 60px;
-  }
-  
-  /* Benefit Item */
-  .benefit {
-    position: relative;
-    opacity: 0; /* Start hidden for animation */
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  /* Stagger animations for each benefit item */
-  .benefit:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .benefit:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-  .benefit:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-  .benefit:nth-child(4) {
-    animation-delay: 0.8s;
-  }
-  
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-top: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff5722; /* Adjust if you prefer #eb6e0d */
+}
+
+/* Benefits Grid Layout */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+/* Each Benefit */
+.benefit {
+  position: relative;
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Stagger animations for each benefit */
+.benefit:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.benefit:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.benefit:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.benefit:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.benefit:nth-child(5) {
+  animation-delay: 1s;
+}
+.benefit:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* Benefit Content Layout: text on left, icon on right */
+/* Fix alignment in Why Choose Us section while preserving design */
+
+/* Ensure consistent vertical alignment in all benefit items */
+.benefit-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Fix text alignment for left-side text (odd items) */
+.benefit:nth-child(odd) .benefit-text {
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* Fix text alignment for right-side text (even items) */
+.benefit:nth-child(even) .benefit-text {
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+/* Ensure proper spacing between text and icon */
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fix responsive issues */
+@media (max-width: 576px) {
   .benefit-content {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
+    flex-direction: column !important;
   }
-  
-  /* Benefit Text */
-  .benefit-text {
-    flex: 1;
-    text-align: right;
-    padding-right: 20px;
-  }
-  
-  .benefit-text h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-  
-  .benefit-text h3 span {
-    color: #eb6e0d;
-  }
-  
-  .benefit-text p {
-    color: #ccc;
-    font-size: 16px;
-  }
-  
-  /* Benefit Icon */
-  .benefit-icon {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    border: 2px solid #eb6e0d;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out; /* Hover animation */
-  }
-  
-  .benefit-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  .benefit-icon i {
-    font-size: 28px;
-    color: #fff;
-  }
-  
-  .number {
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    background-color: #eb6e0d;
-    color: #1a0933;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
-  /* Alternate Icon Position for Right side */
-  .benefit:nth-child(even) .benefit-content {
-    flex-direction: row-reverse;
-  }
-  
+
+  /* Center all text on mobile */
+  .benefit:nth-child(odd) .benefit-text,
   .benefit:nth-child(even) .benefit-text {
-    text-align: left;
-    padding-right: 0;
-    padding-left: 20px;
+    text-align: center !important;
+    padding: 0 0 20px 0 !important;
   }
-  
-  /* Custom Icons */
-  .benefit:nth-child(1) .benefit-icon i {
-    transform: rotate(45deg);
+}
+
+
+
+/* Responsive: Single column on smaller screens */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .benefit:nth-child(4) .benefit-icon i {
-    color: #eb6e0d;
+  .section-header h2 {
+    font-size: 36px;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 992px) {
-    .benefits-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .section-header h2 {
-      font-size: 36px;
-    }
-  
-    .benefit-text h3 {
-      font-size: 24px;
-    }
+  .benefit-text h3 {
+    font-size: 24px;
   }
-  
-  @media (max-width: 576px) {
-    .benefit-content {
-      flex-direction: column !important;
-    }
-  
-    .benefit-text {
-      text-align: center !important;
-      padding: 0 0 20px 0 !important;
-    }
-  
-    .section-header h2 {
-      font-size: 30px;
-    }
+}
+
+@media (max-width: 576px) {
+  .benefit-content {
+    flex-direction: column !important;
   }
-  
-  /* Animation Keyframes */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .benefit-text {
+    text-align: center !important;
+    padding: 0 0 20px 0 !important;
   }
+  .section-header h2 {
+    font-size: 30px;
+  }
+}
+
   
   /*****************************************************
    * 9. TESTIMONIALS SECTION
@@ -1504,7 +1452,7 @@ html { scroll-behavior: smooth; }
     right: 20px;
     width: 50px;
     height: 50px;
-    background: #eb6e0d;
+    background: #ff5722;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1552,7 +1500,3 @@ html { scroll-behavior: smooth; }
     }
   }
 
-
-  
-
-  

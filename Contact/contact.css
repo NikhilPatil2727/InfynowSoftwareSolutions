@@ -21,9 +21,6 @@ body {
 /* ------------------------------
    Top Navbar Container
 ------------------------------ */
-/* ------------------------------
-   Top Navbar Container
------------------------------- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -34,39 +31,39 @@ nav {
     width: 100%;
     background-color: #020d26;
     z-index: 1000;
-    border: 2px solid rgba(244, 165, 104, 0.54);
+    border: 2px solid #ff5722;
     border-radius: 10px;
     padding: 0.5rem 1rem;
-  }
-  
-  /* Prevent header content from hiding under fixed navbar */
-  header {
+}
+
+/* Prevent header content from hiding under fixed navbar */
+header {
     padding-top: 100px;
-  }
-  
-  /* ------------------------------
-     Logo with Hover Animation
-  ------------------------------ */
-  .logo {
+}
+
+/* ------------------------------
+   Logo with Hover Animation
+------------------------------ */
+.logo {
     position: relative;
     display: inline-block;
     overflow: hidden;
-  }
-  
-  .logo img {
+}
+
+.logo img {
     display: block;
     height: 80px;
     width: auto;
     object-fit: contain;
     transition: transform 0.5s ease;
-  }
-  
-  .logo:hover img {
+}
+
+.logo:hover img {
     transform: scale(1.1);
-  }
-  
-  /* Shine overlay for the logo */
-  .logo::before {
+}
+
+/* Shine overlay for the logo */
+.logo::before {
     content: "";
     position: absolute;
     top: 0;
@@ -76,41 +73,41 @@ nav {
     background: linear-gradient(120deg, transparent 0%, rgba(255, 165, 0, 0.4) 50%, transparent 100%);
     transform: skewX(-25deg);
     transition: left 0.75s ease;
-  }
-  
-  .logo:hover::before {
+}
+
+.logo:hover::before {
     left: 100%;
-  }
-  
-  /* ------------------------------
-     Desktop Navigation Menu
-  ------------------------------ */
-  .main-nav {
+}
+
+/* ------------------------------
+   Desktop Navigation Menu
+------------------------------ */
+.main-nav {
     display: flex;
     list-style: none;
     gap: 2rem;
     align-items: center;
-  }
-  
-  .main-nav li a {
+}
+
+.main-nav li a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
-  }
-  
-  .main-nav li a:hover {
+}
+
+.main-nav li a:hover {
     color: #eb6e0d;
-  }
-  
-  /* ------------------------------
-     Dropdown Menu (Desktop)
-  ------------------------------ */
-  .dropdown {
+}
+
+/* ------------------------------
+   Dropdown Menu (Desktop)
+------------------------------ */
+.dropdown {
     position: relative;
-  }
-  
-  .dropdown-menu {
+}
+
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -125,35 +122,35 @@ nav {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-  }
-  
-  .dropdown:hover .dropdown-menu {
+}
+
+.dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-  }
-  
-  .dropdown-menu li {
+}
+
+.dropdown-menu li {
     list-style: none;
-  }
-  
-  .dropdown-menu li a {
+}
+
+.dropdown-menu li a {
     display: block;
     padding: 0.5rem 1rem;
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
-  }
-  
-  .dropdown-menu li a:hover {
+}
+
+.dropdown-menu li a:hover {
     background-color: rgba(255, 215, 0, 0.1);
     color: #eb6e0d;
-  }
-  
-  /* ------------------------------
-     Contact Button
-  ------------------------------ */
-  .Contact {
+}
+
+/* ------------------------------
+   Contact Button
+------------------------------ */
+.Contact {
     background-color: transparent;
     border: 1px solid #eb6e0d;
     color: white;
@@ -162,17 +159,17 @@ nav {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
-  }
-  
-  .Contact:hover {
+}
+
+.Contact:hover {
     background-color: #eb6e0d;
     color: #1a1040;
-  }
-  
-  /* ------------------------------
-     Mobile Menu Button
-  ------------------------------ */
-  .mobile-menu-btn {
+}
+
+/* ------------------------------
+   Mobile Menu Button
+------------------------------ */
+.mobile-menu-btn {
     display: none;
     background: none;
     border: none;
@@ -180,12 +177,12 @@ nav {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
-  }
-  
-  /* ------------------------------
-     Mobile Sidebar Menu
-  ------------------------------ */
-  .mobile-sidebar {
+}
+
+/* ------------------------------
+   Mobile Sidebar Menu
+------------------------------ */
+.mobile-sidebar {
     position: fixed;
     top: 0;
     right: 0;
@@ -200,25 +197,25 @@ nav {
     flex-direction: column;
     gap: 1rem;
     overflow-y: auto;
-  }
-  
-  .mobile-sidebar.active {
+}
+
+.mobile-sidebar.active {
     transform: translateX(0);
-  }
-  
-  .sidebar-nav {
+}
+
+.sidebar-nav {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  
-  /* Sidebar Dropdowns */
-  .mobile-sidebar .dropdown {
+}
+
+/* Sidebar Dropdowns */
+.mobile-sidebar .dropdown {
     position: relative;
-  }
-  
-  .mobile-sidebar .dropdown-menu {
+}
+
+.mobile-sidebar .dropdown-menu {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -228,42 +225,42 @@ nav {
     box-shadow: none;
     padding: 0;
     min-width: auto;
-  }
-  
-  .mobile-sidebar .dropdown-menu li a {
+}
+
+.mobile-sidebar .dropdown-menu li a {
     padding-left: 1rem;
-  }
-  
-  /* ------------------------------
-     Sidebar Close Button (Mobile)
-  ------------------------------ */
-  .sidebar-header .close-btn {
+}
+
+/* ------------------------------
+   Sidebar Close Button (Mobile)
+------------------------------ */
+.sidebar-header .close-btn {
     background: transparent;
     border: none;
     color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .sidebar-header .close-btn:hover {
+}
+
+.sidebar-header .close-btn:hover {
     color: orange;
     transform: scale(1.1);
-  }
-  
-  /* ------------------------------
-     Responsive (Mobile)
-  ------------------------------ */
-  @media (max-width: 768px) {
+}
+
+/* ------------------------------
+   Responsive (Mobile)
+------------------------------ */
+@media (max-width: 768px) {
     .mobile-menu-btn {
-      display: block;
+        display: block;
     }
     .main-nav {
-      display: none;
+        display: none;
     }
-  }
+}
 
-  .contact-btn {
+.contact-btn {
     display: inline-block;
     background-color: #eb6e0d;
     color: #1b1528;
@@ -271,29 +268,27 @@ nav {
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3sease;
+    transition: background-color 0.3s ease;
+}
+
+option {
+    background-color: #27203B;
 }
 
 .hero-section {
-    background: linear-gradient(135deg, var(--dark-blue) 0%, #0a1e4a 100%);
+    /* background-image: url('https://media.istockphoto.com/id/1251202338/photo/contact-us-neon-sign-glowing-text-with-blue-neon-sign-hoovering-over-businessmans-hand.jpg?s=1024x1024&w=is&k=20&c=adEjK9YPan9D672fbwAkN6DEFVA6TzybbVF6HGc8ts4='); */
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     text-align: center;
     padding: 80px 20px;
     margin-bottom: 50px;
     position: relative;
     overflow: hidden;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.1)" x="0" y="0" width="100" height="100"/></svg>') repeat;
-    opacity: 0.1;
-    animation: backgroundMove 20s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-section h1 {
@@ -301,8 +296,9 @@ nav {
     font-weight: 700;
     margin-bottom: 20px;
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     color: var(--main-heading-color);
+    mix-blend-mode: screen;
 }
 
 .hero-section p {
@@ -310,14 +306,16 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.9;
+    mix-blend-mode: screen;
 }
 
-@keyframes backgroundMove {
-    from {
-        background-position: 0 0;
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
     }
-    to {
-        background-position: 100px 100px;
+
+    .hero-section p {
+        font-size: 1em;
     }
 }
 
@@ -573,7 +571,7 @@ nav {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     z-index: 1000;
     text-decoration: none;
@@ -612,6 +610,8 @@ nav {
     }
 }
 
+/* FOOTER */
+/*  Footer Section */
 .footer-section {
     background-color: #1b1528;
     color: #fff;
@@ -625,20 +625,20 @@ nav {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .footer-column h4 {
     margin-bottom: 20px;
     font-size: 1.2rem;
     color: #eb6e0d;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -647,14 +647,14 @@ nav {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #cfcfcf;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -681,7 +681,7 @@ nav {
 .footer-socials {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 15px;
 }
 
@@ -705,39 +705,6 @@ nav {
     transform: translateY(-3px);
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 15px;
-}
-
-.newsletter-form input[type="email"] {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.newsletter-form button {
-    padding: 12px 20px;
-    border: none;
-    outline: none;
-    background-color: #eb6e0d;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.newsletter-form button:hover {
-    background-color: #ff7f2a;
-}
-
 .footer-bottom {
     margin-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -756,6 +723,17 @@ nav {
     width: 100%;
 }
 
+.email-link {
+    color: #ff5722;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #ff8f66;
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
     .footer-top {
         grid-template-columns: repeat(2, 1fr);
@@ -783,16 +761,6 @@ nav {
 }
 
 @media (max-width: 576px) {
-    .newsletter-form {
-        flex-direction: column;
-    }
-
-    .newsletter-form input[type="email"],
-    .newsletter-form button {
-        width: 100%;
-        border-radius: 4px;
-    }
-
     .footer-section {
         padding: 40px 15px 15px;
     }

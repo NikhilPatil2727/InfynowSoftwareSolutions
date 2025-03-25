@@ -102,7 +102,6 @@ const jobs = [
 // Populate jobs grid
 function populateJobs() {
     const jobsGrid = document.getElementById('jobsGrid');
-    const positionSelect = document.getElementById('position');
 
     jobs.forEach(job => {
         // Create job card
@@ -123,15 +122,10 @@ function populateJobs() {
                 <h4>Experience</h4>
                 <p>${job.experience}</p>
             </div>
+            <button class="apply-btn" onclick="openPopup('${job.title}')">Apply Now</button>
         `;
 
         jobsGrid.appendChild(jobCard);
-
-        // Add job to select options
-        const option = document.createElement('option');
-        option.value = job.title;
-        option.textContent = job.title;
-        positionSelect.appendChild(option);
     });
 }
 
@@ -143,7 +137,22 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
     const formData = new FormData(this);
     alert('Thank you for your application! We will review it and get back to you soon.');
     this.reset();
+    closePopup();
 });
+
+// Open popup form
+function openPopup(position) {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const positionInput = document.getElementById('position');
+    positionInput.value = position;
+    popupOverlay.classList.add('active');
+}
+
+// Close popup form
+function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.classList.remove('active');
+}
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -162,6 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
             input.style.backgroundColor = 'rgb(39, 32, 59)';
         });
     });
+
+    // Close popup when close button is clicked
+    document.getElementById('closePopup').addEventListener('click', closePopup);
 });
 
 // Add scroll animation
@@ -193,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ARROW
-
 document.getElementById('scrollToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -202,8 +213,13 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
 });
 
 // NAVBAR
-
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
 }
+
+// Footer date dynamic
+document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+});

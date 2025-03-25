@@ -121,7 +121,14 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
     });
 });
 
+// NAVBAR
 function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-sidebar');
     sidebar.classList.toggle('active');
 }
+
+//footer date dynamic
+document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+});
