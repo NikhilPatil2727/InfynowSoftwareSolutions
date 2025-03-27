@@ -979,316 +979,156 @@
         padding: 40px 15px 15px;
     }
   }
-  
   /* Popup Form Styles */
-  .popup-form-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Enable scroll on smaller screens */
-    padding-top: 80px; /* Push form below navbar */
+.popup-form-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Enable scroll on smaller screens */
+  padding-top: 80px; /* Push form below navbar */
+}
+
+.popup-form-content {
+  background: #020d26;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto; /* Scroll inside form */
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: 2px solid #ff5722;
+  margin-top: 100px;
+}
+
+.popup-form-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #ff5722;
+}
+
+/* Ensure labels are aligned to the left */
+.popup-form-content label {
+  display: block;
+  text-align: left; /* Align labels to the left */
+  margin: 10px 0 5px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.popup-form-content input,
+.popup-form-content textarea,
+.popup-form-content select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  background-color: #0a1a3a;
+  color: #fff;
+  font-size: 14px;
+}
+
+.popup-form-content input::placeholder,
+.popup-form-content textarea::placeholder {
+  color: #aaa;
+}
+
+.popup-form-content .submit-btn {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.popup-form-content .submit-btn:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff5722;
+}
+
+.apply-btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
+}
+
+/* Form Row for First/Last Name */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
   }
-  
+
   .popup-form-content {
-    background: #020d26;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto; /* Scroll inside form */
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: 2px solid #ff5722;
-    margin-top: 100px;
+    padding: 20px;
   }
-  
+
   .popup-form-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-    color: #ff5722;
+    font-size: 20px;
   }
-  
-  .popup-form-content label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #fff;
-    font-weight: 500;
-  }
-  
+}
+
+@media (max-width: 480px) {
   .popup-form-content input,
   .popup-form-content textarea,
   .popup-form-content select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    margin-bottom: 15px;
-    background-color: #0a1a3a;
-    color: #fff;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .popup-form-content .submit-btn {
+    padding: 10px;
     font-size: 14px;
   }
-  
-  .popup-form-content input::placeholder,
-  .popup-form-content textarea::placeholder {
-    color: #aaa;
-  }
-  
-  .popup-form-content .submit-btn {
-    background-color: #ff5722;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .popup-form-content .submit-btn:hover {
-    background-color: #e64a19;
-    transform: translateY(-2px);
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .close-btn:hover {
-    color: #ff5722;
-  }
-  
-  .apply-btn {
-    background-color: #ff5722;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .apply-btn:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
-  }
-  
-  /* Form Row for First/Last Name */
-  .form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-  
-  .form-group {
-    flex: 1;
-  }
-  
-  @media (max-width: 600px) {
-    .form-row {
-      flex-direction: column;
-      gap: 0;
-    }
-  
-    .popup-form-content {
-      padding: 20px;
-    }
-  
-    .popup-form-content h2 {
-      font-size: 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .popup-form-content input,
-    .popup-form-content textarea,
-    .popup-form-content select {
-      padding: 10px;
-      font-size: 13px;
-    }
-  
-    .popup-form-content .submit-btn {
-      padding: 10px;
-      font-size: 14px;
-    }
-  }
-  /* Base Styles */
-  :root {
-    --primary-color: #ff5722;
-    --secondary-color: #020d26;
-    --dark-blue: #020d26;
-    --darker-blue: #020d26;
-    --light-text: #ffffff;
-    --gray-text: #cccccc;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Inter", sans-serif;
-    background-color: #020d26;
-    color: var(--light-text);
-    line-height: 1.6;
-  }
-  
-  /* Popup Form Styles */
-  .popup-form-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Enable scroll on smaller screens */
-    padding-top: 80px; /* Push form below navbar */
-  }
-  
-  .popup-form-content {
-    background: #020d26;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto; /* Scroll inside form */
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: 2px solid #ff5722;
-    margin: 0 auto;
-    margin-top: 100px;
-  }
-  
-  .popup-form-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-    color: #ff5722;
-  }
-  
-  .popup-form-content label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #fff;
-    font-weight: 500;
-  }
-  
-  .popup-form-content input,
-  .popup-form-content textarea,
-  .popup-form-content select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    margin-bottom: 15px;
-    background-color: #0a1a3a;
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  .popup-form-content input::placeholder,
-  .popup-form-content textarea::placeholder {
-    color: #aaa;
-  }
-  
-  .popup-form-content .submit-btn {
-    background-color: #ff5722;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .popup-form-content .submit-btn:hover {
-    background-color: #e64a19;
-    transform: translateY(-2px);
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .close-btn:hover {
-    color: #ff5722;
-  }
-  
-  /* Form Row for First/Last Name */
-  .form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-  
-  .form-group {
-    flex: 1;
-  }
-  
-  @media (max-width: 600px) {
-    .form-row {
-      flex-direction: column;
-      gap: 0;
-    }
-  
-    .popup-form-content {
-      padding: 20px;
-    }
-  
-    .popup-form-content h2 {
-      font-size: 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .popup-form-content input,
-    .popup-form-content textarea,
-    .popup-form-content select {
-      padding: 10px;
-      font-size: 13px;
-    }
-  
-    .popup-form-content .submit-btn {
-      padding: 10px;
-      font-size: 14px;
-    }
-  }
-  
-  
-  
+}

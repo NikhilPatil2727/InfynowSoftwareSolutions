@@ -313,13 +313,13 @@ h2 {
   padding: 2rem;
   overflow: hidden;
   margin-top: -150px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5clW1uAHLzyHc30e1kxVG9vpkw5lTOkrEGw&s'); /* Replace with any other preferred image */
-  background-size: cover;
+  background-image: url(https://images.pexels.com/photos/16592498/pexels-photo-16592498/free-photo-of-software-source-code-program-code-code-on-a-computer-screen-the-developer-is-working-on-program-codes-in-the-office-photo-with-source-code.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Overlay to darken background for better text visibility */
+/* Optional: Dark overlay for better text readability */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -327,7 +327,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  background: rgba(0, 0, 0, 0.5); /* Adjust darkness */
   z-index: 1;
 }
 
@@ -338,7 +338,6 @@ h2 {
   max-width: 1000px;
   animation: fadeInUp 1s ease-out;
 }
-
 
 @keyframes fadeInUp {
   0% {
@@ -353,7 +352,7 @@ h2 {
 
 .hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color:#ff5c2d; /* You can use var(--accent-color) if defined */
+  color: #ff5722; /* or var(--accent-color) if your variable is set */
   margin-bottom: 1rem;
 }
 
@@ -362,7 +361,6 @@ h2 {
   opacity: 0.9;
   color: #f0f0f0;
 }
-
 
 /* Benefits Section */
 /* Benefits Section */
@@ -1209,12 +1207,14 @@ h2 {
   align-items: center;
   margin-bottom: 20px;
 }
-
 .modal-header h2 {
   font-size: 1.5rem;
   margin: 0;
-  color: #ff5722;
+  color:  #ff5722;
+  text-align: center; /* Centers the heading */
+  width: 100%; /* Ensures full width for proper centering */
 }
+
 
 @keyframes slideIn {
   from {
@@ -1271,12 +1271,12 @@ h2 {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  background-color: #fff;
-  color: #000;
+  background-color: #020d26;
+  color: #fdfbfb;
 }
 
 .submit-btn {
-  background-color: #ff6600;
+  background-color: #ff5722;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -1284,7 +1284,11 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  
+  display: block; /* Makes the button a block element */
+  margin-left: auto; /* Pushes it to the right */
 }
+
 
 .submit-btn:hover {
   background-color: #e65c00;

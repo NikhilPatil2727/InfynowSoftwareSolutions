@@ -117,8 +117,11 @@ document.addEventListener('click', (e) => {
     chatBot.style.display = 'none';
   }
 });
-
-chatInput.addEventListener('input', () => {
-  chatInput.style.height = 'auto';
-  chatInput.style.height = `${chatInput.scrollHeight}px`;
+//close funtinaliy of enquirey form 
+document.querySelector('.enquiry-close-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('.inquiry-form-container').style.display = 'none';
 });
+
+
+

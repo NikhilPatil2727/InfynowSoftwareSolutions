@@ -65,7 +65,7 @@ body {
 .header-background {
   position: relative;
   text-align: center;
-  background: url('https://cdn.textstudio.com/output/sample/normal/4/1/6/5/product-logo-275-5614.png') no-repeat center center;
+  background: url('https://cdn.prod.website-files.com/6443d6d96a788f6942166567/647011e6f6f8afa3f50181ce_What-is-Your-Website-Design-Process-Blog-Post-Feature-Image-36119-01.png') no-repeat center center;
   background-size: cover;
   padding: 4rem 0;
   margin-bottom: 4rem;
@@ -80,7 +80,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(2, 13, 38, 0.6); /* Dark overlay */
+  background: rgba(2, 13, 38, 0.6);
   z-index: 1;
 }
 
@@ -165,6 +165,29 @@ body {
   color: #cccccc;
 }
 
+/* Hidden Feature Style */
+.hidden-feature {
+  display: none;
+}
+
+/* More Button Style */
+.more-button {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #e64a19;
+}
+
 /* CTA Section */
 .cta-section {
   text-align: center;
@@ -214,124 +237,107 @@ body {
 /* Animations */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes underlineExpand {
   from {
-      width: 0;
+    width: 0;
   }
   to {
-      width: 100%;
+    width: 100%;
   }
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
   .container {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
-
   .features-grid {
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 }
 
 @media screen and (max-width: 768px) {
   .main-title {
-      font-size: 2.8rem;
+    font-size: 2.8rem;
   }
-
   .product-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-
   .features-grid {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-
   .cta-section h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   .container {
-      padding: 1rem;
+    padding: 1rem;
   }
-
   .header {
-      padding: 2rem 0;
+    padding: 2rem 0;
   }
-
   .main-title {
-      font-size: 2.2rem;
+    font-size: 2.2rem;
   }
-
   .subtitle {
-      font-size: 1rem;
+    font-size: 1rem;
   }
-
   .product-title {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
-
   .features-title {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
-
   .features-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-
   .cta-section {
-      padding: 2rem 1rem;
+    padding: 2rem 1rem;
   }
-
   .cta-section h2 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
-
   .cta-section p {
-      font-size: 1rem;
+    font-size: 1rem;
   }
-
   .cta-button {
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 375px) {
   .main-title {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
-
   .product-title {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
-
   .product-description {
-      font-size: 0.95rem;
+    font-size: 0.95rem;
   }
-
   .feature-card {
-      padding: 1.2rem;
+    padding: 1.2rem;
   }
 }
 
@@ -541,10 +547,10 @@ header {
 
 @media (max-width: 768px) {
   .mobile-menu-btn {
-      display: block;
+    display: block;
   }
   .main-nav {
-      display: none;
+    display: none;
   }
 }
 
@@ -556,7 +562,7 @@ header {
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3sease;
+  transition: background-color 0.3s ease;
 }
 
 option {
@@ -587,34 +593,6 @@ option {
 #scrollToTop:hover {
   background: #eb6e0d;
   transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  #scrollToTop {
-      width: 40px;
-      height: 40px;
-      bottom: 15px;
-      right: 15px;
-      font-size: 18px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  #scrollToTop {
-      width: 45px;
-      height: 45px;
-      font-size: 20px;
-  }
-}
-
-@media (min-width: 1440px) {
-  #scrollToTop {
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
-      right: 30px;
-      font-size: 28px;
-  }
 }
 
 /* Footer Section */
@@ -737,36 +715,4 @@ option {
 
 .email-link:hover {
   color: #ff8f66;
-}
-
-@media (max-width: 992px) {
-  .footer-top {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-  }
-
-  .footer-about {
-      grid-column: span 2;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-top {
-      grid-template-columns: 1fr;
-      gap: 40px;
-  }
-
-  .footer-about {
-      grid-column: span 1;
-  }
-
-  .footer-column {
-      padding: 0 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-section {
-      padding: 40px 15px 15px;
-  }
 }

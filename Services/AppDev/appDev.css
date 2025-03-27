@@ -313,10 +313,12 @@ h2 {
   padding: 2rem;
   overflow: hidden;
   margin-top: -150px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShpJyp8ON44Ww72ySgsSwgZmdw-6o_kr_gJQ&s'); /* Custom software themed image */
+  background: #000; /* Dark background */
+  background-image: url(https://img.freepik.com/premium-photo/set-five-mobile-user-interface-screens-with-dark-theme_1209158-34899.jpg?ga=GA1.1.1110533733.1730184069);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: orange; /* Set text color to orange */
 }
 
 /* Optional: Dark overlay for better text readability */
@@ -327,9 +329,16 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust darkness */
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay */
   z-index: 1;
 }
+
+/* Ensure text appears above the overlay */
+.hero-section * {
+  position: relative;
+  z-index: 2;
+}
+
 
 .hero-content {
   position: relative;
@@ -1207,12 +1216,14 @@ h2 {
   align-items: center;
   margin-bottom: 20px;
 }
-
 .modal-header h2 {
   font-size: 1.5rem;
   margin: 0;
-  color: #ff5722;
+  color:  #ff5722;
+  text-align: center; /* Centers the heading */
+  width: 100%; /* Ensures full width for proper centering */
 }
+
 
 @keyframes slideIn {
   from {
@@ -1269,12 +1280,12 @@ h2 {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  background-color: #fff;
-  color: #000;
+  background-color: #020d26;
+  color: #fdfbfb;
 }
 
 .submit-btn {
-  background-color: #ff6600;
+  background-color: #ff5722;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -1282,7 +1293,11 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  
+  display: block; /* Makes the button a block element */
+  margin-left: auto; /* Pushes it to the right */
 }
+
 
 .submit-btn:hover {
   background-color: #e65c00;

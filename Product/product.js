@@ -1,26 +1,43 @@
+// Navbar Functionality
+function toggleMobileMenu() {
+    const sidebar = document.getElementById('mobile-sidebar');
+    sidebar.classList.toggle('active');
+}
+
+// Scroll to Top Functionality
+document.getElementById('scrollToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Set Current Year in Footer
+document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+});
+
+// Feature Card Animations and More Features Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Stagger the animation of feature cards
+    // Stagger Animation for Feature Cards
     const featureCards = document.querySelectorAll('.feature-card');
-    
     featureCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
-        
         setTimeout(() => {
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
         }, 100 * index);
     });
-    
-    // Smooth scroll for any anchor links
+
+    // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 100,
@@ -29,16 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Intersection Observer for scroll animations
+
+    // Intersection Observer for Scroll Animations
     const sections = document.querySelectorAll('.product-section, .cta-section');
-    
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-    
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -47,51 +62,114 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
     sections.forEach(section => {
         section.style.animationPlayState = 'paused';
         sectionObserver.observe(section);
     });
-    
-    // CTA Button hover effect
+
+    // CTA Button Hover Effect
     const ctaButton = document.querySelector('.cta-button');
-    
     if (ctaButton) {
         ctaButton.addEventListener('mouseenter', () => {
             ctaButton.style.transform = 'translateY(-3px)';
             ctaButton.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
         });
-        
         ctaButton.addEventListener('mouseleave', () => {
             ctaButton.style.transform = 'translateY(0)';
             ctaButton.style.boxShadow = 'none';
         });
-        
-        // ctaButton.addEventListener('click', () => {
-        //     alert('Thank you for your interest! Our team will contact you shortly.');
-        // });
     }
-});
 
-// navbar 
-function toggleMobileMenu() {
-    const sidebar = document.getElementById('mobile-sidebar');
-    sidebar.classList.toggle('active');
-  }
+    // More Features and Show Less Functionality
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
 
+    function initFeatures(section) {
+        const grid = section.querySelector('.features-grid');
+        const cards = Array.from(grid.querySelectorAll('.feature-card'));
 
-// ARROW functionality code 
-document.getElementById('scrollToTop').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        // Temporarily show all cards to calculate N
+        cards.forEach(card => card.classList.remove('hidden-feature'));
+
+        if (cards.length > 0) {
+            const firstTop = cards[0].offsetTop;
+            let N = 1;
+            while (N < cards.length && cards[N].offsetTop === firstTop) {
+                N++;
+            }
+
+            const initialRows = 2;
+            const initialVisible = initialRows * N;
+
+            // Hide cards beyond initialVisible
+            cards.forEach((card, index) => {
+                if (index >= initialVisible) {
+                    card.classList.add('hidden-feature');
+                }
+            });
+
+            // Show or hide the more-button
+            const moreButton = section.querySelector('.more-button');
+            if (cards.length > initialVisible) {
+                moreButton.style.display = 'block';
+                moreButton.textContent = 'More Features';
+            } else {
+                moreButton.style.display = 'none';
+            }
+        }
+    }
+
+    function setupMoreButton(section) {
+        const moreButton = section.querySelector('.more-button');
+        moreButton.addEventListener('click', () => {
+            const grid = section.querySelector('.features-grid');
+            const cards = Array.from(grid.querySelectorAll('.feature-card'));
+            const visibleCards = cards.filter(card => !card.classList.contains('hidden-feature'));
+
+            if (visibleCards.length > 0) {
+                const firstTop = visibleCards[0].offsetTop;
+                let N = 1;
+                while (N < visibleCards.length && visibleCards[N].offsetTop === firstTop) {
+                    N++;
+                }
+
+                const step = 2; // Show/hide 2 rows at a time
+                if (moreButton.textContent === 'More Features') {
+                    const hiddenCards = cards.filter(card => card.classList.contains('hidden-feature'));
+                    const toShow = hiddenCards.slice(0, step * N);
+                    toShow.forEach(card => card.classList.remove('hidden-feature'));
+                    if (hiddenCards.length <= toShow.length) {
+                        moreButton.textContent = 'Show Less';
+                    }
+                } else if (moreButton.textContent === 'Show Less') {
+                    const visibleCardsNow = cards.filter(card => !card.classList.contains('hidden-feature'));
+                    const toHide = visibleCardsNow.slice(-step * N);
+                    toHide.forEach(card => card.classList.add('hidden-feature'));
+                    const initialVisible = 2 * N;
+                    if (visibleCardsNow.length - toHide.length <= initialVisible) {
+                        moreButton.textContent = 'More Features';
+                    }
+                }
+            }
+        });
+    }
+
+    // Initialize and Setup for Each Product Section
+    const productSections = document.querySelectorAll('.product-section');
+    productSections.forEach(section => {
+        initFeatures(section);
+        setupMoreButton(section);
     });
+
+    // Re-initialize on Window Resize
+    window.addEventListener('resize', debounce(() => {
+        productSections.forEach(section => {
+            initFeatures(section);
+        });
+    }, 250));
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const currentYear = new Date().getFullYear();
-    document.getElementById('current-year').textContent = currentYear;
-  });
-
-

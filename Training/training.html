@@ -89,6 +89,7 @@
             </ul>
           </div>
         </div>
+        
       </header>
     <div class="min-h-screen">
 
@@ -343,31 +344,35 @@
                         <span class="close-btn" id="closeFormBtn">&times;</span>
                         <h2>Internship Application</h2>
                         <form id="internshipForm">
-                            <div class="form-row">
-                              <div class="form-group">
-                                  <label for="firstName">First Name</label>
-                                  <input type="text" id="firstName" name="firstName" placeholder="Enter your Name" required />
-                              </div>
-                              <div class="form-group">
-                                  <label for="lastName">Last Name</label>
-                                  <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
-                              </div>
-                            </div>
-                            <!-- Email Field -->
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name" required />
                             </div>
-                            <!-- Phone Number Field -->
+                            <!-- Phone Number Field (Mandatory) -->
                             <div class="form-group">
                                 <label for="phoneNumber">Phone Number</label>
-                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" required />
                             </div>
-                            <!-- Dropdown 1 -->
+                            <!-- Email Field (Not Mandatory) -->
                             <div class="form-group">
-                                <label for="domain">Select Domain</label>
-                                <select id="domain" name="domain" required>
-                                    <option value="" disabled selected>Select a domain</option>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="johndoe@sample.com" />
+                            </div>
+                            <!-- College Field -->
+                            <div class="form-group">
+                                <label for="college">College</label>
+                                <input type="text" id="college" name="college" placeholder="Enter your College Name" />
+                            </div>
+                            <!-- Course of Study Field -->
+                            <div class="form-group">
+                                <label for="course">Course of Study</label>
+                                <input type="text" id="course" name="course" placeholder="Enter your Course of Study" />
+                            </div>
+                            <!-- Interested in (Mandatory) -->
+                            <div class="form-group">
+                                <label for="interestedIn">Interested In</label>
+                                <select id="interestedIn" name="interestedIn" required>
+                                    <option value="" disabled selected>Select a course</option>
                                     <option value="software">Software Development</option>
                                     <option value="web">Web Development</option>
                                     <option value="mobile">Mobile App Development</option>
@@ -378,24 +383,19 @@
                                     <option value="cloud">Cloud Computing & DevOps</option>
                                 </select>
                             </div>
-                            <!-- Dropdown 2 -->
+                            <!-- Resume Upload (Not Mandatory) -->
                             <div class="form-group">
-                                <label for="duration">Duration</label>
-                                <select id="duration" name="duration" required>
-                                    <option value="" disabled selected>Select duration</option>
-                                    <option value="1month">1 Month</option>
-                                    <option value="2months">2 Months</option>
-                                    <option value="3months">3 Months</option>
-                                    <option value="6months">6 Months</option>
-                                </select>
+                                <label for="resume">Upload Resume</label>
+                                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" />
                             </div>
-                            <!-- Enquiry Details Field -->
+                            <!-- Additional Message Field (Not Mandatory) -->
                             <div class="form-group">
-                                <label for="message">Additional Information</label>
-                                <textarea id="message" name="message" rows="3" placeholder="Tell us about your background and what you hope to learn"></textarea>
+                                <label for="message">Any Message</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Write your message here"></textarea>
                             </div>
                             <button type="submit" class="submit-btn">Submit Application</button>
                         </form>
+                        
                       </div>
                     </div>
                 </div>

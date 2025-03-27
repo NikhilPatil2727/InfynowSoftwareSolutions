@@ -473,7 +473,7 @@ button {
     left: 0;
 }
 
-/* FAQs Section */
+/* FAQs Section
 .faqs-section {
     padding: 80px 0;
     background-color: rgba(255, 255, 255, 0.02);
@@ -532,7 +532,7 @@ button {
 .faq-item.active .faq-answer {
     max-height: 500px;
     padding: 20px;
-}
+} */
 
 /* Blog Modal */
 .blog-modal {

@@ -74,21 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // FAQ toggle functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    // // FAQ toggle functionality
+    // const faqQuestions = document.querySelectorAll('.faq-question');
     
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const faqItem = this.parentElement;
+    // faqQuestions.forEach(question => {
+    //     question.addEventListener('click', function() {
+    //         const faqItem = this.parentElement;
             
-            // Toggle active class
-            faqItem.classList.toggle('active');
+    //         // Toggle active class
+    //         faqItem.classList.toggle('active');
             
-            // Update toggle icon
-            const toggleIcon = this.querySelector('.toggle-icon');
-            toggleIcon.textContent = faqItem.classList.contains('active') ? '−' : '+';
-        });
-    });
+    //         // Update toggle icon
+    //         const toggleIcon = this.querySelector('.toggle-icon');
+    //         toggleIcon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+    //     });
+    // });
 
     // Newsletter form submission (prevent default for demo)
     const newsletterForm = document.querySelector('.newsletter-form');

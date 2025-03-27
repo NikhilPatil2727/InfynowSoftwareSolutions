@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Company</title>
+    <title>Infynow Softwares</title>
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    
+
     <header>
         <nav>
             <div class="logo">
-                <a href="/Home/index.html"><img src="/logo.png" alt="TECH Logo" /></a>
+                <a href="/Home/index.html">
+                    <!-- <img src="/logo.png" alt="TECH Logo" /> -->
+                    <span class="">INFYNOW</span>
+                </a>
 
             </div>
 
@@ -27,16 +30,17 @@
                         <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
                         <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
                         <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
-                        <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+                        <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance &
+                                Support Services</a></li>
                         <li><a href="../Training/training.html">Internship & Project Training</a></li>
                         <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
 
-                       
-                        
+
+
 
                     </ul>
                 </li>
-                <li><a href="../Training/training.html">Training</a></li>
+                <li><a href="../Training/training.html">Internship</a></li>
                 <li><a href="../About/about.html">About</a></li>
                 <li><a href="../Career/career.html">Careers</a></li>
                 <li><a href="../Product/product.html">Products</a></li>
@@ -63,10 +67,12 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none;">Services</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a></li>
+                            <li><a href="../Services/SoftwareSolutions/softSol.html">Custom Software Development</a>
+                            </li>
                             <li><a href="../Services/webDev/webDev.html">Website Design & Development</a></li>
-                            <li><a href="../Services/AppDev/appDev.html">Mobile App Development</a></li>
-                            <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance & Support Services</a></li>
+                            <li><a href="../Services/AppDev/">Mobile App Development</a></li>
+                            <li><a href="../Services/SoftwareMaintenance/SoftwareMaintenance.html">Software Maintenance
+                                    & Support Services</a></li>
                             <li><a href="../Training/training.html">Internship & Project Training</a></li>
                             <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
                         </ul>
@@ -84,13 +90,14 @@
                     </li>
                 </ul>
             </div>
+            <button id="closeForm" class="close-form-btn">×</button>
         </div>
 
         <!-- Hero Section with Inquiry Form -->
         <div class="hero-container">
             <div class="hero">
                 <h1>
-                    Delivering Superior Services Cutting-Edge <span class="highlight">IT Solutions.</span>
+                    Delivering Superior Cutting-Edge <span class="highlight">IT Solutions</span>
                 </h1>
                 <p>
                     We Make Great Things Possible
@@ -101,54 +108,56 @@
                 </div>
                 <div class="social-links">
                     <a href="https://x.com/infynow/status/1331058651222589440"><i class="fab fa-twitter"></i></a>
-                    <a  href="https://www.facebook.com/infynow/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/infynow/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in"><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a href="https://www.instagram.com/infynowsoftware_solutions/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+
 
             <!-- Inquiry Form -->
             <div class="inquiry-form-container">
                 <div class="modal">
                     <div class="modal-header">
-                        <h2>Website Enquiry Form</h2>
+                        <h2>ENQUIRY FORM</h2>
+                        <button class="enquiry-close-btn">×</button>
                     </div>
                     <form class="enquiry-form">
-                        <!-- First and Last Name Row -->
+                        <!-- Keep all your existing form fields exactly as they were -->
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="firstName">First Name</label>
+                                <label for="firstName">Full Name</label>
                                 <input type="text" id="firstName" name="firstName" placeholder="Enter your Name "
                                     required />
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="lastName">Last Name</label>
                                 <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name"
                                     required />
-                            </div>
+                            </div> -->
                         </div>
-                        <!-- Email Field -->
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
                         </div>
-                        <!-- Phone Number Field -->
                         <div class="form-group">
                             <label for="phoneNumber">Phone Number</label>
                             <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
                         </div>
-                        <!-- Dropdown 1 -->
                         <div class="form-group">
-                            <label for="dropdown1">Select Option 1</label>
+                            <label for="dropdown1">Services</label>
                             <select id="dropdown1" name="dropdown1" required>
-                                <option value="" disabled selected> Select an option </option>
-                                <option value="option1">Option 1</option>
-                                <option value="option2">Option 2</option>
-                                <option value="option3">Option 3</option>
+                                <option value="" disabled selected> Select Services </option>
+                                <option value="option1">Custom Software Development</option>
+                                <option value="option2">Website Design & Development</option>
+                                <option value="option3">Mobile App Development</option>
+                                <option value="option4">Software Maintenance & Support Services</option>
+                                <option value="option5">Internship & Project Training</option>
+                                <option value="option6">Digital Marketing Services</option>
                             </select>
                         </div>
-                        <!-- Dropdown 2 -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="dropdown2">Select Option 2</label>
                             <select id="dropdown2" name="dropdown2" required>
                                 <option value="" disabled selected> Select an option </option>
@@ -156,10 +165,9 @@
                                 <option value="option2">Option 2</option>
                                 <option value="option3">Option 3</option>
                             </select>
-                        </div>
-                        <!-- Enquiry Details Field -->
+                        </div> -->
                         <div class="form-group">
-                            <label for="enquiryDetails">Enquiry Details</label>
+                            <label for="enquiryDetails">Any Message</label>
                             <textarea id="enquiryDetails" name="enquiryDetails" rows="2"
                                 placeholder="Type your answer here"></textarea>
                         </div>
@@ -171,13 +179,12 @@
     </header>
 
 
-
-
     <!-- body section  -->
     <div class="services-section">
         <h2>Services We Offer</h2>
         <p>
-            Our services include expert web design, digital marketing, SEO, and tailored e-commerce solutions to boost your business.
+            We provide cutting-edge software solutions, including web and mobile app development, AI-driven automation,
+            cloud solutions, and IT services, helping businesses scale, innovate, and succeed in the digital era.
         </p>
 
         <div class="services-grid">
@@ -187,7 +194,7 @@
                     <i class="fa fa-lightbulb"></i>
                     <h3>Custom Software Development</h3>
                     <p>
-                        We build custom, scalable software solutions designed for your business needs—from apps to automation tools, with seamless user experiences.
+                        We develop custom, scalable software solutions, including apps and automation tools, ensuring seamless user experiences tailored to your business needs.....
                     </p>
                 </div>
             </a>
@@ -198,7 +205,8 @@
                     <i class="fa fa-server"></i>
                     <h3>Website Design & Development</h3>
                     <p>
-                        We build custom software solutions, delivering scalable, secure, and high-performance applications with seamless user experiences, tailored to your needs.
+                        We build custom software solutions, delivering scalable, secure, and high-performance
+                        applications with seamless user experiences, tailored to your needs....
                     </p>
                 </div>
             </a>
@@ -209,7 +217,8 @@
                     <i class="fa fa-share-alt"></i>
                     <h3>Mobile App Development</h3>
                     <p>
-                        We build high-performance mobile apps with seamless experiences, scalability, and security, tailored for iOS, Android, or cross-platform solutions.
+                        We build high-performance mobile apps with seamless experiences, scalability, and security,
+                        tailored for iOS, Android, or cross-platform solutions....
                     </p>
                 </div>
             </a>
@@ -220,7 +229,8 @@
                     <i class="fa fa-wrench"></i>
                     <h3>Software Maintenance & Support Services</h3>
                     <p>
-                        We provide reliable software maintenance and support, ensuring security, performance, and updates for custom apps, web platforms, and enterprises.
+                        We provide reliable software maintenance and support, ensuring security, performance, and
+                        updates for custom apps, web platforms, and enterprises....
                     </p>
                 </div>
             </a>
@@ -231,7 +241,7 @@
                     <i class="fa fa-graduation-cap"></i>
                     <h3>Internship & Project Training</h3>
                     <p>
-                        Our Internship & Project Training offers hands-on experience in software development, web, mobile, UI/UX, databases, and cloud computing.
+                        Our Internship & Project Training provides hands-on experience in software development, web, mobile, UI/UX, databases, and cloud computing skills....
                     </p>
                 </div>
             </a>
@@ -242,7 +252,7 @@
                     <i class="fa fa-bullhorn"></i>
                     <h3>Digital Marketing Services</h3>
                     <p>
-                        We offer digital marketing services, including SEO, PPC, social media, and content marketing, to boost visibility and drive conversions.
+                        We offer digital marketing services, including SEO, PPC, social media, and content marketing, to boost visibility, drive conversions, enhance brand growth, and maximize ROI....
                     </p>
                 </div>
             </a>
@@ -254,92 +264,92 @@
 
     <section class="why-choose-us">
         <div class="container">
-          <div class="section-header">
-            <h2 id="x">Why Choose Us</h2>
-          </div>
-      
-          <div class="benefits-grid">
-            <!-- Benefit 1 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3>Expert-Led <span>Software Solutions</span></h3>
-                  <p>Get cutting-edge technology solutions designed by experienced professionals.</p>
-                </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-clipboard-check"></i>
-                </div>
-              </div>
+            <div class="section-header">
+                <h2 id="x">Why Choose Us</h2>
             </div>
-      
-            <!-- Benefit 2 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3>On-Time <span>Project Delivery</span></h3>
-                  <p>Fast and efficient development with strict deadlines and quality assurance.</p>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>Expert-Led <span>Software Solutions</span></h3>
+                            <p>Get cutting-edge technology solutions designed by experienced professionals.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-lightbulb"></i>
+
+                <!-- Benefit 2 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>On-Time <span>Project Delivery</span></h3>
+                            <p>Fast and efficient development with strict deadlines and quality assurance.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>Custom &amp; Scalable <span>Development</span></h3>
+                            <p>We build software tailored to your business needs with future-ready scalability.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3><span>Affordable &amp; Transparent</span> Pricing</h3>
+                            <p>Get high-quality services at competitive prices with no hidden costs.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3><span>SEO & Performance</span> Websites</h3>
+                            <p>Fast, mobile-friendly, and SEO-optimized web solutions. </p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit">
+                    <div class="benefit-content">
+                        <div class="benefit-text">
+                            <h3>24/7 <span>Support &amp; Maintenance</span></h3>
+                            <p>Reliable post-launch support to ensure smooth performance.</p>
+                        </div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-      
-            <!-- Benefit 3 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3>Custom &amp; Scalable <span>Development</span></h3>
-                  <p>We build software tailored to your business needs with future-ready scalability.</p>
-                </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Benefit 4 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3><span>Affordable &amp; Transparent</span> Pricing</h3>
-                  <p>Get high-quality services at competitive prices with no hidden costs.</p>
-                </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-dollar-sign"></i>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Benefit 5 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3><span>SEO & Performance</span> Websites</h3>
-                  <p>Fast, mobile-friendly, and SEO-optimized web solutions. </p>
-                </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-cog"></i>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Benefit 6 -->
-            <div class="benefit">
-              <div class="benefit-content">
-                <div class="benefit-text">
-                  <h3>24/7 <span>Support &amp; Maintenance</span></h3>
-                  <p>Reliable post-launch support to ensure smooth performance.</p>
-                </div>
-                <div class="benefit-icon">
-                  <i class="fas fa-headset"></i>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-      
+    </section>
+
 
     <!-- tesimonals -->
     <div class="testimonials-slider-section">
@@ -430,40 +440,35 @@
             <span data-slide="1"></span>
         </div>
     </div>
- 
-    
+
+
 <!-- Chat Icon -->
 <div id="chatIcon">💬</div>
 
 <!-- Chatbot Container -->
 <div class="chatBot" id="chatBot">
-  <header>
-    <h2>Support Chat</h2>
-    <span id="closeChat">×</span>
-  </header>
-  
-  <!-- Main Chat Window -->
-  <div class="chatbox">
-    <!-- Existing messages remain the same -->
-    <div class="chat chat-incoming">
-      <p>Hello! How can I help you today?</p>
+    <header>
+        <h2>Support Chat</h2>
+        <span id="closeChat">×</span>
+    </header>
+    <div class="chatbox">
+        <div class="chat chat-incoming">
+            <p>Hello! How can I help you today?</p>
+        </div>
+        <div class="chat chat-outgoing">
+            <p>I'd like to know more about your services.</p>
+        </div>
     </div>
-    <div class="chat chat-outgoing">
-      <p>I'd like to know more about your services.</p>
+    <div class="chat-input">
+        <textarea placeholder="Type your message..." rows="1"></textarea>
+        <button id="sendBTN">Send</button>
     </div>
-  </div>
-  
-  <!-- Chat Input Section -->
-  <div class="chat-input">
-    <textarea placeholder="Type your message..." rows="1"></textarea>
-    <button id="sendBTN">Send</button>
-  </div>
 </div>
-   
 
-    <div id="scrollToTop" aria-label="Scroll to top">↑</div>
- 
-    
+<!-- Scroll-to-Top Button -->
+<div id="scrollToTop" aria-label="Scroll to top">↑</div>
+
+
     <!-- Footer  -->
 
     <div class="footer-section">
@@ -477,10 +482,14 @@
                 </p>
                 <h4>Follow Us</h4>
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/infynow/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/infynow/status/1331058651222589440" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/infynowsoftware_solutions/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/infynow/" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/infynow/status/1331058651222589440" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/infynowsoftware_solutions/" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/infynow-business-solutions-llp/?originalSubdomain=in"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
@@ -489,7 +498,7 @@
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="../Home/index.html">Home</a></li>
-                    <li><a href="../Training/training.html">Training</a></li>
+                    <li><a href="../Training/training.html">Internship</a></li>
                     <li><a href="../About/about.html">About us</a></li>
                     <li><a href="../Career/career.html">Careers</a></li>
                     <li><a href="../Product/product.html">Products</a></li>

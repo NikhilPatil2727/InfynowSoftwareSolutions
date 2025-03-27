@@ -11,7 +11,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-// Smooth scroll for navigation (if you add navigation later)
+// Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -21,7 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ARROW
+// Scroll to Top
 document.getElementById('scrollToTop').addEventListener('click', () => {
   window.scrollTo({
       top: 0,
@@ -29,7 +29,7 @@ document.getElementById('scrollToTop').addEventListener('click', () => {
   });
 });
 
-// NAVBAR
+// Navbar
 function toggleMobileMenu() {
   const sidebar = document.getElementById('mobile-sidebar');
   sidebar.classList.toggle('active');
@@ -49,53 +49,42 @@ function closePopup() {
 // Form submission handler
 document.getElementById('enquiryForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  // Add your form submission logic here
   console.log('Form submitted');
   closePopup();
 });
 
-// Add click event to Get A Quote button
-document.querySelector('.discuss-section .contact-btn').addEventListener('click', function(e) {
-  e.preventDefault();
-  openPopup();
-});
-
-// Basic one-by-one slider
+// Slider functionality
 const track = document.querySelector('.slider-track');
 const slides = Array.from(document.querySelectorAll('.slide'));
 const indicators = Array.from(document.querySelectorAll('.slider-indicators span'));
 
 let currentSlide = 0;
 const totalSlides = slides.length;
-const slideDuration = 7000; // 7 seconds per slide
+const slideDuration = 7000;
 
-// Show a specific slide by index
 function showSlide(index) {
-currentSlide = (index + totalSlides) % totalSlides;
-track.style.transform = `translateX(-${currentSlide * 100}%)`;
-indicators.forEach((dot, i) => {
-  dot.classList.toggle('active', i === currentSlide);
-});
+  currentSlide = (index + totalSlides) % totalSlides;
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  indicators.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+  });
 }
 
-// Indicator clicks
 indicators.forEach(dot => {
-dot.addEventListener('click', () => {
-  const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
-  showSlide(slideIndex);
-});
+  dot.addEventListener('click', () => {
+      const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+      showSlide(slideIndex);
+  });
 });
 
-// Auto-slide every few seconds
 setInterval(() => {
-showSlide(currentSlide + 1);
+  showSlide(currentSlide + 1);
 }, slideDuration);
 
-// Initialize first slide
 showSlide(0);
 
-//footer date dynamic 
+// Footer date dynamic
 document.addEventListener("DOMContentLoaded", function () {
-const currentYear = new Date().getFullYear();
-document.getElementById('current-year').textContent = currentYear;
+  const currentYear = new Date().getFullYear();
+  document.getElementById('current-year').textContent = currentYear;
 });
