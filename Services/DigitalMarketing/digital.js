@@ -114,12 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-        const sidebar = document.getElementById('mobile-sidebar');
-        sidebar.classList.toggle('active');
-    }
-
     // ARROW functionality code
     document.getElementById('scrollToTop').addEventListener('click', () => {
         window.scrollTo({
@@ -131,4 +125,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
+
+    // Animate paragraphs on scroll for Mobile App Section
+    const paragraphs = document.querySelectorAll('.mobile-app-section .text-content p');
+    const image = document.querySelector('.mobile-app-section .image-content .main-image');
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Initial check for elements in viewport
+    function checkVisibility() {
+        paragraphs.forEach((paragraph, index) => {
+            if (isInViewport(paragraph)) {
+                // Add delay based on index
+                setTimeout(() => {
+                    paragraph.classList.add('visible');
+                }, index * 200);
+            }
+        });
+    }
+    
+    // Add interactive hover effect to the image
+    if (image) {
+        image.addEventListener('mousemove', function(e) {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            this.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
+        image.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+    }
+    
+    // Check visibility on scroll
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Initial check
+    checkVisibility();
 });

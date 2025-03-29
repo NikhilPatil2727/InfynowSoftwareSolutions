@@ -29,7 +29,7 @@
             <li><a href="../DigitalMarketing/digital.html">Digital Marketing Services</a></li>
           </ul>
         </li>
-        <li><a href="/Training/training.html">Training</a></li>
+        <li><a href="/Training/training.html">Internship</a></li>
         <li><a href="/About/about.html">About</a></li>
         <li><a href="/Career/career.html">Careers</a></li>
         <li><a href="../../Product/product.html">Products</a></li>
@@ -97,6 +97,21 @@
             <div class="hero-content">
                 <h1 > Website Design & Development</h1>
                 <p> "We build stunning, high-performance websites with modern design, responsive layouts, and SEO-friendly, secure technology."</p>
+            </div>
+        </section>
+
+           <!-- paragraph-->
+           <section class="mobile-app-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2><span class="arr">➤</span>  Website Design & Development</h2>
+                    <p>We specialize in custom mobile app development, delivering seamless user experiences, high performance, and scalability. Whether you need a native iOS app, Android app, or a cross-platform solution, our expert developers create feature-rich, secure, and engaging applications tailored to your business needs.</p>  
+                    <p>From startups to enterprises, we help brands transform ideas into powerful mobile solutions using cutting-edge technologies like AI, machine learning, and cloud integration. Our apps are designed to be fast, intuitive, and conversion-focused, ensuring maximum user engagement and business growth.</p>
+
+                </div>
+                <div class="image-content">
+                    <img src="https://img.freepik.com/premium-vector/application-programming-interface_773186-1531.jpg?ga=GA1.1.1110533733.1730184069&semt=ais_hybrid" alt="website design">
+                </div>
             </div>
         </section>
 
@@ -200,7 +215,7 @@
           <div class="important-cards-grid">
         
             <div class="important-card">
-              <img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png" alt="Discovery Icon" class="important-icon" />
+              <img src="https://cdn-icons-png.flaticon.com/512/1904/1904165.png" alt="Discovery Icon" class="important-icon" />
               <h3>Discovery & Analysis</h3>
               <ul class="important-points">
                 <li><span class="arrow">➤</span> Requirements gathering</li>
@@ -210,6 +225,7 @@
               </ul>
               <div class="activity-bar"></div>
             </div>
+            
         
             <div class="important-card">
               <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Design Icon" class="important-icon" />
@@ -248,7 +264,7 @@
             </div>
         
             <div class="important-card">
-              <img src="https://cdn-icons-png.flaticon.com/512/4711/4711044.png" alt="Deployment Icon" class="important-icon" />
+              <img src="https://cdn-icons-png.flaticon.com/512/9351/9351697.png" alt="Deployment Icon" class="important-icon" />
               <h3>Deployment & Support</h3>
               <ul class="important-points">
                 <li><span class="arrow">➤</span> Continuous deployment</li>
@@ -258,9 +274,11 @@
               </ul>
               <div class="activity-bar"></div>
             </div>
+            
         
           </div>
         </section>
+        
         
         
        <!-- Industries Section -->
@@ -352,55 +370,49 @@
   <div class="cta-content">
     <h2>Let's Build Your Custom Software Today!</h2>
     <p>Contact us to discuss your project and get a free consultation.</p>
-    <button class="cta-button" id="openModalBtn">Get Started</button>
+    
+    <button class="contact-btn" onclick="openPopup()">Get Started</button>
+
   </div>
 </section>
 
 <!-- Inquiry Form Modal -->
-<div class="inquiry-form-container" id="modalForm">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>Website Enquiry Form</h2>
-      <span class="close-modal" id="closeModalBtn" title="Close">&times;</span>
-    </div>
-    <form class="enquiry-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" placeholder="Enter your Name" required />
+
+
+    <!-- Popup Form -->
+    <div class="popup-form-overlay" id="popupFormOverlay">
+      <div class="popup-form-content">
+          <span class="close-btn" onclick="closePopup()">×</span>
+          <h2>Enquiry Form</h2>
+          <form id="enquiryForm" class="enquiry-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">Full Name</label>
+                  <input type="text" id="firstName" name="fullName" placeholder="Enter Your Full Name" required />
+              </div>
+              </div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+              <label for="phoneNumber">Phone Number</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+              <label for="reason">Reason</label>
+              <select id="reason" name="reason" required>
+                  <option value="" disabled selected>Select Services</option>
+                  <option value="customSoftware">Custom Software Development</option>
+                  <option value="webDev">Website Design & Development</option>
+                  <option value="mobileApp">Mobile App Development</option>
+                  <option value="maintenance">Software Maintenance & Support Services</option>
+                  <option value="training">Internship & Project Training</option>
+                  <option value="digitalMarketing">Digital Marketing Services</option>
+              </select>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Type your message here"></textarea>
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
-        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
-      </div>
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
-      </div>
-      <div class="form-group">
-        <label for="dropdown1">Reason</label>
-        <select id="dropdown1" name="dropdown1" required>
-          <option value="" disabled selected> Select Services </option>
-          <option value="option1">Custom Software Development</option>
-          <option value="option2">Website Design & Development</option>
-          <option value="option3">Mobile App Development</option>
-          <option value="option4">Software Maintenance & Support Services</option>
-          <option value="option5">Internship & Project Training</option>
-          <option value="option6">Digital Marketing Services</option>
-        </select>
-      </div>
-    
-      <div class="form-group">
-        <label for="enquiryDetails">Any Message</label>
-        <textarea id="enquiryDetails" name="enquiryDetails" rows="2" placeholder="Type your answer here"></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+  
+
   </div>
 </div>
 
@@ -515,7 +527,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><a href="../../Home/index.html">Home</a></li>
-              <li><a href="../../Training/training.html">Training</a></li>
+              <li><a href="../../Training/training.html">Internship</a></li>
               <li><a href="../../About/about.html">About us</a></li>
               <li><a href="../../Career/career.html">Careers</a></li>
               <li><a href="../../Contact/contact.html">Contact</a></li>

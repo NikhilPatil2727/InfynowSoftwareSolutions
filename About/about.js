@@ -37,13 +37,13 @@ function toggleMobileMenu() {
 
 // Popup Form Functions
 function openPopup() {
-  const popupOverlay = document.getElementById('popupOverlay');
-  popupOverlay.classList.add('active');
+  const popupFormOverlay = document.getElementById('popupFormOverlay');
+  popupFormOverlay.style.display = 'flex';
 }
 
 function closePopup() {
-  const popupOverlay = document.getElementById('popupOverlay');
-  popupOverlay.classList.remove('active');
+  const popupFormOverlay = document.getElementById('popupFormOverlay');
+  popupFormOverlay.style.display = 'none';
 }
 
 // Form submission handler

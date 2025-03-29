@@ -65,7 +65,7 @@ body {
 .header-background {
   position: relative;
   text-align: center;
-  background: url('https://cdn.prod.website-files.com/6443d6d96a788f6942166567/647011e6f6f8afa3f50181ce_What-is-Your-Website-Design-Process-Blog-Post-Feature-Image-36119-01.png') no-repeat center center;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDbSd_kI-W8XeN7Gyk9uFii815p3Xzul7fg&s') no-repeat center center;
   background-size: cover;
   padding: 4rem 0;
   margin-bottom: 4rem;
@@ -576,7 +576,7 @@ option {
   right: 20px;
   width: 50px;
   height: 50px;
-  background: #eb6e0d;
+  background: #ff5722;
   border-radius: 50%;
   display: flex;
   align-items: center;

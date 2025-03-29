@@ -45,7 +45,7 @@
           <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu">
             <i class="fa fa-bars"></i>
           </button>
-        </nav>
+        </nav=nav>
         
         <!-- Mobile Sidebar Menu -->
         <div class="mobile-sidebar" id="mobile-sidebar">
@@ -54,9 +54,7 @@
           </div>
           <div class="sidebar-content">
             <ul class="sidebar-nav">
-              <li>
-                <a href="/Home/index.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Home</a>
-              </li>
+              <li><a href="/Home/index.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Home</a></li>
               <li class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle" style="text-decoration: none ; color: #ff5722;">Services</a>
                 <ul class="dropdown-menu">
@@ -68,24 +66,12 @@
                     <li><a href="../Services/DigitalMarketing/digital.html">Digital Marketing Services</a></li>
                 </ul>
               </li>
-              <li>
-                <a href="/Training/training.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Training</a>
-              </li>
-              <li>
-                <a href="/About/about.html" class="nav-link" style="text-decoration: none; color: #ff5722;">About</a>
-              </li>
-              <li>
-                <a href="/Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a>
-              </li>
-              <li>
-                <a href="../Product/product.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Products</a>
-              </li>
-              <li>
-                <a href="../Blogs/blogs.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Blogs</a>
-              </li>
-              <li>
-                <a href="/Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a>
-              </li>
+              <li><a href="/Training/training.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Training</a></li>
+              <li><a href="/About/about.html" class="nav-link" style="text-decoration: none; color: #ff5722;">About</a></li>
+              <li><a href="/Career/career.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Careers</a></li>
+              <li><a href="../Product/product.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Products</a></li>
+              <li><a href="../Blogs/blogs.html" class="nav-link" style="text-decoration: none; color: #ff5722;">Blogs</a></li>
+              <li><a href="/Contact/contact.html" class="contact-btn" style="text-decoration: none;">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -177,11 +163,11 @@
                             <div class="testimonial-card">
                                 <img src="../public/images/dinkar.08322f3f471c05e5e75c.png" alt="Person 3" class="testimonial-img" />
                                 <div class="testimonial-content">
-                                    <h3>John Doe</h3>
-                                    <span class="job-title">Adv. Dinkar Shetty</span>
+                                    <h3>Adv. Dinkar Shetty</h3>
+                                    <span class="job-title">Advocate</span>
                                     <div class="star-rating">★★★★★</div>
                                     <p>
-                                        infyNow and their team are knowledgeable, transparent, and passionate at what they are doing. They completed the project in these trying times within the stipulated period. They were patient to all my questions and queries and were ready to implement the changes requested by me. Overall extremely satisfied.
+                                        infyNow and their team are knowledgeable, transparent, and passionate at what they are doing. They completed the project in these trying times within the stipulated period.
                                     </p>
                                     <div class="quote-icon">❝</div>
                                 </div>
@@ -193,7 +179,7 @@
                                     <span class="job-title">Owner & Founder</span>
                                     <div class="star-rating">★★★★★</div>
                                     <p>
-                                        Amazing service at an affordable price. thanks to your team for my website it's a pleasure working with infyNow. The team understands briefs well and responds promptly to satisfy requirements.
+                                        Amazing service at an affordable price. thanks to your team for my website it's a pleasure working with infyNow.
                                     </p>
                                     <div class="quote-icon">❝</div>
                                 </div>
@@ -218,52 +204,40 @@
         </div>
     </div>
 
-    <!-- Updated Enquiry Form Popup -->
-    <div id="popupOverlay" class="popup-overlay">
-        <div class="inquiry-form-container">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2>ENQUIRY FORM</h2>
-                    <button class="enquiry-close-btn" onclick="closePopup()">×</button>
+    <!-- New Popup Form -->
+    <div class="popup-form-overlay" id="popupFormOverlay">
+        <div class="popup-form-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h2>Enquiry Form</h2>
+            <form id="enquiryForm" class="enquiry-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Full Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required />
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
+                    </div> -->
                 </div>
-                <form class="enquiry-form" id="enquiryForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Enter your Name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
-                    </div>
-                    <div class="form-group">
-                        <label for="dropdown1">Reason</label>
-                        <select id="dropdown1" name="dropdown1" required>
-                            <option value="" disabled selected>Select Services</option>
-                            <option value="option1">Custom Software Development</option>
-                            <option value="option2">Website Design & Development</option>
-                            <option value="option3">Mobile App Development</option>
-                            <option value="option4">Software Maintenance & Support Services</option>
-                            <option value="option5">Internship & Project Training</option>
-                            <option value="option6">Digital Marketing Services</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="enquiryDetails">Any Message</label>
-                        <textarea id="enquiryDetails" name="enquiryDetails" rows="2" placeholder="Type your answer here"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
-            </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="johndoe@sample.com" required />
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="000 000 0000" />
+                <label for="reason">Services</label>
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Select Services</option>
+                    <option value="customSoftware">Custom Software Development</option>
+                    <option value="webDev">Website Design & Development</option>
+                    <option value="mobileApp">Mobile App Development</option>
+                    <option value="maintenance">Software Maintenance & Support Services</option>
+                    <option value="training">Internship & Project Training</option>
+                    <option value="digitalMarketing">Digital Marketing Services</option>
+                </select>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Type your message here"></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
     </div>
 

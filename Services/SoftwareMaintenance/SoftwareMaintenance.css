@@ -13,9 +13,7 @@ body {
   color: var(--text-color);
 }
 
-/* ------------------------------
- Top Navbar Container
------------------------------- */
+/* Top Navbar Container */
 nav {
   display: flex;
   justify-content: space-between;
@@ -31,14 +29,11 @@ nav {
   padding: 0.5rem 1rem;
 }
 
-/* Prevent header content from hiding under fixed navbar */
 header {
   padding-top: 100px;
 }
 
-/* ------------------------------
- Logo with Hover Animation
------------------------------- */
+/* Logo with Hover Animation */
 .logo {
   position: relative;
   display: inline-block;
@@ -57,7 +52,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Shine overlay for the logo */
 .logo::before {
   content: "";
   position: absolute;
@@ -74,9 +68,7 @@ header {
   left: 100%;
 }
 
-/* ------------------------------
- Desktop Navigation Menu
------------------------------- */
+/* Desktop Navigation Menu */
 .main-nav {
   display: flex;
   list-style: none;
@@ -95,9 +87,7 @@ header {
   color: #eb6e0d;
 }
 
-/* ------------------------------
- Dropdown Menu (Desktop)
------------------------------- */
+/* Dropdown Menu (Desktop) */
 .dropdown {
   position: relative;
 }
@@ -142,9 +132,7 @@ header {
   color: #eb6e0d;
 }
 
-/* ------------------------------
- Contact Button
------------------------------- */
+/* Contact Button */
 .Contact {
   background-color: transparent;
   border: 1px solid #eb6e0d;
@@ -161,9 +149,7 @@ header {
   color: #1a1040;
 }
 
-/* ------------------------------
- Mobile Menu Button
------------------------------- */
+/* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -174,9 +160,7 @@ header {
   z-index: 1001;
 }
 
-/* ------------------------------
- Mobile Sidebar Menu
------------------------------- */
+/* Mobile Sidebar Menu */
 .mobile-sidebar {
   position: fixed;
   top: 0;
@@ -205,7 +189,6 @@ header {
   gap: 1rem;
 }
 
-/* Sidebar Dropdowns */
 .mobile-sidebar .dropdown {
   position: relative;
 }
@@ -226,9 +209,7 @@ header {
   padding-left: 1rem;
 }
 
-/* ------------------------------
- Sidebar Close Button (Mobile)
------------------------------- */
+/* Sidebar Close Button (Mobile) */
 .sidebar-header .close-btn {
   background: transparent;
   border: none;
@@ -243,15 +224,13 @@ header {
   transform: scale(1.1);
 }
 
-/* ------------------------------
- Responsive (Mobile)
------------------------------- */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
   .mobile-menu-btn {
-      display: block;
+    display: block;
   }
   .main-nav {
-      display: none;
+    display: none;
   }
 }
 
@@ -279,19 +258,22 @@ header {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background-image: url(https://media.istockphoto.com/id/1410576102/vector/technology-background-with-hi-tech-digital-data.jpg?s=612x612&w=0&k=20&c=dDgsUAJNNHmxnbcd_aV0dZMDFrRSQwRyfGwyzT2Gj3w=);
-    background-size: cover;
-  background-position: center;
-  color:#eb6e0d;
+  background-image:url(https://media.istockphoto.com/id/1410576102/vector/technology-background-with-hi-tech-digital-data.jpg?s=612x612&w=0&k=20&c=dDgsUAJNNHmxnbcd_aV0dZMDFrRSQwRyfGwyzT2Gj3w=); 
+  background-size: cover;
+  
+background-position: center;
+color:#eb6e0d;
 }
+
 
 .hero-section::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -306,7 +288,7 @@ header {
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: 20px;
-  color: #ff5c2d ;
+  color: #ff5c2d;
 }
 
 .hero-content p {
@@ -316,6 +298,132 @@ header {
   color: white;
 }
 
+/* Mobile App Section Styling */
+.mobile-app-section {
+  padding: 0 20px 80px 20px;
+  background: #020d26;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+}
+
+.text-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #ff5722;
+  position: relative;
+  display: inline-block;
+}
+
+.text-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #fcfafa;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.text-content p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arr {
+  font-size: 2rem;
+}
+
+.image-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.8s ease;
+}
+
+.image-content::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(74, 108, 247, 0.1);
+  border-radius: 50%;
+  top: -50px;
+  right: -50px;
+  z-index: -1;
+}
+
+.image-content::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(74, 108, 247, 0.15);
+  border-radius: 50%;
+  bottom: -30px;
+  left: -30px;
+  z-index: -1;
+}
+
+/* Floating animation for the image */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text-content h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .image-content {
+    margin-top: 40px;
+  }
+  .image-content img {
+    max-width: 100%;
+  }
+}
+
 /* Benefits Section Styling */
 .benefits-section {
   position: relative;
@@ -323,24 +431,26 @@ header {
   background: var(--primary-bg);
 }
 
+/* Consistent Section Heading Styling */
 .section-heading {
-  color: var(--accent-color);
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #ff5722;
   position: relative;
-  padding-bottom: 0.75rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
-.section-heading h2::after {
+.section-heading::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 165, 0, 0.4) 50%, transparent 100%);
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
 }
 
 .benefits-grid {
@@ -349,12 +459,12 @@ header {
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 60px auto 0;
   justify-items: center;
 }
 
 .benefit-card {
-  background: var(--card-bg);
+  background: #121f3d;
   padding: 2rem;
   border-radius: 1rem;
   border: 2px solid var(--accent-color);
@@ -368,7 +478,6 @@ header {
   cursor: pointer;
   max-width: 100%;
   width: 75%;
-  background: #121f3d;
 }
 
 .benefit-card:hover {
@@ -401,34 +510,31 @@ header {
   color: #d1d5db;
 }
 
-/* Icon Styling */
-/* Top margin to section */
+/* Why Important Section */
 .why-important-section {
   margin-top: 60px;
 }
 
-/* Grid layout 3x3 */
 .important-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
   padding: 0 30px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 @media (max-width: 992px) {
   .important-cards-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .important-cards-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-/* Card Styling */
 .important-card {
   background: #121f3d;
   border: 1.5px solid #ff5c2d;
@@ -445,7 +551,6 @@ header {
   box-shadow: 0 12px 25px rgba(255, 92, 45, 0.4);
 }
 
-/* Icon */
 .important-icon {
   width: 60px;
   height: 60px;
@@ -458,7 +563,6 @@ header {
   transform: scale(1.15) rotate(8deg);
 }
 
-/* Heading */
 .important-card h3 {
   font-size: 1.4rem;
   color: #ffffff;
@@ -466,7 +570,6 @@ header {
   font-weight: 600;
 }
 
-/* Arrow List Styling */
 .important-points {
   padding-left: 0;
   text-align: left;
@@ -489,7 +592,6 @@ header {
   margin-right: 10px;
 }
 
-/* Activity Bar Hover Expand */
 .activity-bar {
   height: 5px;
   width: 50%;
@@ -506,50 +608,24 @@ header {
 }
 
 @keyframes moveBar {
-  0% {
-      background-position: 0% 50%;
-  }
-  100% {
-      background-position: 100% 50%;
-  }
-}
-
-/* Section Heading */
-.section-heading {
-  font-size: 2.5rem;
-  color: #ff5722;
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.section-heading::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(to right, #ff5722, transparent);
-  border-radius: 2px;
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 @media (max-width: 768px) {
-  .styled-heading {
-      font-size: 1.9rem;
+  .section-heading {
+    font-size: 1.9rem;
   }
 }
 
-/* New scroll-to-top button styles */
+/* Scroll-to-Top Button */
 #scrollToTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 50px;
   height: 50px;
-  background: #eb6e0d;
+  background:#ff5722;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -560,7 +636,7 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
   z-index: 1000;
-  text-decoration: none; /* Prevent underline on some browsers */
+  text-decoration: none;
 }
 
 #scrollToTop:hover {
@@ -568,32 +644,31 @@ header {
   transform: scale(1.1);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   #scrollToTop {
-      width: 40px;
-      height: 40px;
-      bottom: 15px;
-      right: 15px;
-      font-size: 18px;
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   #scrollToTop {
-      width: 45px;
-      height: 45px;
-      font-size: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 1440px) {
   #scrollToTop {
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
-      right: 30px;
-      font-size: 28px;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 28px;
   }
 }
 
@@ -719,35 +794,31 @@ header {
   color: #ff8f66;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
   .footer-top {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
-
   .footer-about {
-      grid-column: span 2;
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
   .footer-top {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-
   .footer-about {
-      grid-column: span 1;
+    grid-column: span 1;
   }
-
   .footer-column {
-      padding: 0 20px;
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 576px) {
   .footer-section {
-      padding: 40px 15px 15px;
+    padding: 40px 15px 15px;
   }
 }
